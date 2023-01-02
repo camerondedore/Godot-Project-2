@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=2]
-
-[ext_resource path="res://Fonts/courier-prime.tres" type="DynamicFont" id=1]
-
-[resource]
-default_font = ExtResource( 1 )
-LineEdit/fonts/font = null

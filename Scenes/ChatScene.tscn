@@ -1,33 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://UI/ChatTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/chat-theme.tres" type="Theme" id=1]
 [ext_resource path="res://C#/Chat/Chat.cs" type="Script" id=2]
 [ext_resource path="res://C#/EngineTime.cs" type="Script" id=3]
 [ext_resource path="res://UI/ui-quit-button.png" type="Texture" id=4]
 [ext_resource path="res://UI/ui-quit-button-hover.png" type="Texture" id=5]
 [ext_resource path="res://C#/Chat/ChatUi.cs" type="Script" id=6]
-
-[sub_resource type="StyleBoxEmpty" id=7]
-content_margin_left = 4.0
-content_margin_right = 4.0
-content_margin_top = 4.0
-content_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id=5]
-content_margin_left = 3.0
-content_margin_right = 3.0
-content_margin_top = 3.0
-content_margin_bottom = 3.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.352941, 0.352941, 0.352941, 1 )
-expand_margin_left = 1.0
-expand_margin_right = 1.0
-expand_margin_top = 1.0
-expand_margin_bottom = 1.0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
@@ -36,22 +14,7 @@ corner_detail = 4
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.162109, 0.162109, 0.162109, 1 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-content_margin_left = 0.0
-content_margin_right = 0.0
-content_margin_top = 0.0
-content_margin_bottom = 0.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.352941, 0.352941, 0.352941, 1 )
-expand_margin_right = 1.0
-expand_margin_top = 1.0
-expand_margin_bottom = 1.0
-
-[node name="ChatScene" type="Node2D"]
+[node name="ChatScene" type="Control"]
 
 [node name="ChatUi" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
@@ -75,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.47998
 hint_tooltip = "Quit"
+theme = ExtResource( 1 )
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
@@ -98,15 +62,15 @@ anchor_bottom = 0.9
 [node name="CharHistoryOutline" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 1.0
-margin_bottom = 1.0
 color = Color( 0.352941, 0.352941, 0.352941, 1 )
 
 [node name="ChatHistoryBackground" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="ChatHistory" type="RichTextLabel" parent="ChatUi/BackgroundRect/Container"]
@@ -114,7 +78,6 @@ anchor_right = 1.0
 anchor_bottom = 0.95
 focus_mode = 2
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[color=teal] __       __             ______    ______   __                   __     
 |  \\  _  |  \\           /      \\  /      \\ |  \\                 |  \\    
@@ -149,7 +112,6 @@ anchor_right = 0.8
 anchor_bottom = 1.0
 focus_neighbour_right = NodePath("../SendButton")
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 5 )
 max_length = 100
 context_menu_enabled = false
 virtual_keyboard_enabled = false
@@ -158,16 +120,18 @@ shortcut_keys_enabled = false
 placeholder_text = "enter message ..."
 placeholder_alpha = 0.4
 caret_blink = true
+caret_blink_speed = 0.5
 
 [node name="SendButton" type="Button" parent="ChatUi/BackgroundRect/Container"]
 anchor_left = 0.8
 anchor_top = 0.95
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.279968
+margin_right = 0.400024
 theme = ExtResource( 1 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 6 )
 text = "SEND MESSAGE"
 
 [node name="CommandLabel" type="Label" parent="ChatUi/BackgroundRect"]

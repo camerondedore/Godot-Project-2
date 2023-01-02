@@ -131,9 +131,9 @@ public class ChatUi : Node
 		
 		public ChatLine(string rawMessage)
 		{
-            // split raw message and assign fields
+			// split raw message and assign fields
 			string[] splitMessage = rawMessage.Split(';');
-            
+			
 			time = float.Parse(splitMessage[0]);
 			action = splitMessage[1];
 			user = splitMessage[2];

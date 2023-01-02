@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/courier-prime.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=3]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.535156, 0.535156, 0.535156, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 3.0
+content_margin_right = 3.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+
+[resource]
+default_font = ExtResource( 1 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 4 )
+LineEdit/styles/normal = SubResource( 1 )
+RichTextLabel/styles/normal = SubResource( 5 )
