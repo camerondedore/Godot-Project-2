@@ -1,0 +1,6 @@
+1;logon;colfax;#9911ff;
+1;message;colfax;#9911ff;what's up, nerd?
+2;message;colfax;#9911ff;imma gunna gucci lit fam, bro.
+3.5;message;colfax;#9911ff;i don't understand why people are so stupid
+4;message;colfax;#9911ff;heading out, piece losers
+5;logoff;colfax;#9911ff;
