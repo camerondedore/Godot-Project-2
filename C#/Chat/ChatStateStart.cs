@@ -7,7 +7,6 @@ public class ChatStateStart : ChatState
 
     string[] chatLinesRaw;
     List<ChatUi.ChatLine> chatLines = new List<ChatUi.ChatLine>();
-    int chatIndex = 0;
     float startTime = 0;
 
 
@@ -22,7 +21,7 @@ public class ChatStateStart : ChatState
 
         var chatLine = chatLines[0];
 
-        if(startTime + chatLine.time < EngineTime.timePassed)
+        if(EngineTime.timePassed > startTime + chatLine.time)
         {
             if(chatLine.action == "logon")
             {
@@ -73,6 +72,13 @@ public class ChatStateStart : ChatState
 
     public override State Transition()
     {
+        // check if start chat lines are finished
+        if(chatLines.Count == 0 && EngineTime.timePassed > startTime + 2)
+        {
+            // idle
+            return blackboard.stateIdle;
+        }
+
         return this;
     }
 }

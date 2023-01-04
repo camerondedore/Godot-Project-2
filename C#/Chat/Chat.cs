@@ -5,7 +5,9 @@ public class Chat : Node
 {
 	
 	public StateMachine machine = new StateMachine(); 
-	public State stateStart;
+	public State stateStart,
+		stateIdle,
+		stateRespond;
 
 	[Export]
 	NodePath chatUiPath;
@@ -28,6 +30,8 @@ public class Chat : Node
 
 		// initialize states
 		stateStart = new ChatStateStart(){blackboard = this};
+		stateIdle = new ChatStateIdle(){blackboard = this};
+		stateRespond = new ChatStateRespond(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);

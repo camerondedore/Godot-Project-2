@@ -13,6 +13,7 @@ public class ChatUi : Node
 	NodePath userMessagePath,
 		chatHistoryPath;
 
+	public string newMessage;
 	RichTextLabel chatHistory;
 	LineEdit userMessage;
 
@@ -52,6 +53,8 @@ public class ChatUi : Node
 		}
 
 		AddMessage(playerName, playerColor, userMessage.Text);
+
+		newMessage = userMessage.Text;
 
 		userMessage.Clear();
 	}
