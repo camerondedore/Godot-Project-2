@@ -147,6 +147,7 @@ script = ExtResource( 2 )
 chatUiPath = NodePath("../ChatUi")
 
 [node name="EngineTime" type="Node" parent="."]
+process_priority = -1
 script = ExtResource( 3 )
 
 [connection signal="pressed" from="ChatUi/BackgroundRect/TopBarRect/QuitButton" to="ChatUi" method="_on_QuitButton_pressed"]

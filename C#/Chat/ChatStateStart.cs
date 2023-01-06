@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class ChatStateStart : ChatState
 {
 
-    string[] chatLinesRaw;
     List<ChatUi.ChatLine> chatLines = new List<ChatUi.ChatLine>();
     float startTime = 0;
 
@@ -52,7 +51,7 @@ public class ChatStateStart : ChatState
         startTime = EngineTime.timePassed;
 
         // get chat from file
-        chatLinesRaw = System.IO.File.ReadAllText(blackboard.gameDirectory + blackboard.startChatFileLocalDirectory).Split('\n');
+        var chatLinesRaw = System.IO.File.ReadAllText(blackboard.gameDirectory + blackboard.startChatFileLocalDirectory).Split('\n');
        
         // convert chat lines from raw into objects
         foreach(var chatLineRaw in chatLinesRaw)

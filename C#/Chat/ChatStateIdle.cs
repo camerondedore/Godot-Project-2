@@ -33,7 +33,7 @@ public class ChatStateIdle : ChatState
     public override State Transition()
     {
         // check for new message
-        if(blackboard.chatUi.newMessage != "")
+        if(blackboard.chatUi.newUserMessage != "")
         {
             // respond
             return blackboard.stateRespond;
