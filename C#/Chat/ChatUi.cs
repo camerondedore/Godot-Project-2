@@ -11,11 +11,13 @@ public class ChatUi : Node
 
 	[Export]
 	NodePath userMessagePath,
-		chatHistoryPath;
+		chatHistoryPath,
+		keywordsPath;
 
 	public string newUserMessage = "";
 	RichTextLabel chatHistory;
 	LineEdit userMessage;
+	Label keywords;
 
 
 
@@ -24,9 +26,13 @@ public class ChatUi : Node
 		// get ui controls
 		userMessage = GetNode<LineEdit>(userMessagePath);
 		chatHistory = GetNode<RichTextLabel>(chatHistoryPath);
+		keywords = GetNode<Label>(keywordsPath);
 
 		// set user message box as focused
 		userMessage.GrabFocus();
+
+		// clear keywords
+		keywords.Text = "";
 	}
 
 
@@ -118,6 +124,18 @@ public class ChatUi : Node
 		second = (int) second < 10 ? $"0{second}" : second; // force to 2 digits
 
 		return $"{hour}:{minute}:{second}";
+	}
+
+
+
+	public void SetKeywords(string[] words)
+	{
+		keywords.Text = "Keywords:";
+
+		foreach(var word in words)
+		{
+			keywords.Text = keywords.Text + " " + word;
+		}
 	}
 
 

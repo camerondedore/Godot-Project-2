@@ -20,6 +20,7 @@ bg_color = Color( 0.162109, 0.162109, 0.162109, 1 )
 script = ExtResource( 6 )
 userMessagePath = NodePath("BackgroundRect/Container/UserMessage")
 chatHistoryPath = NodePath("BackgroundRect/Container/ChatHistory")
+keywordsPath = NodePath("BackgroundRect/KeywordsLabel")
 
 [node name="BackgroundRect" type="ColorRect" parent="ChatUi"]
 anchor_right = 1.0
@@ -134,7 +135,7 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 4 )
 text = "SEND MESSAGE"
 
-[node name="CommandLabel" type="Label" parent="ChatUi/BackgroundRect"]
+[node name="KeywordsLabel" type="Label" parent="ChatUi/BackgroundRect"]
 anchor_left = 0.05
 anchor_top = 0.92
 anchor_right = 0.95

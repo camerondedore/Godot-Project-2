@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class Chat : Node
 {
@@ -18,6 +19,8 @@ public class Chat : Node
 
 	public string gameDirectory;
 	public ChatUi chatUi;
+	public List<ChatUi.ChatLine> chatStartLines = new List<ChatUi.ChatLine>(), 
+		chatResponseLines = new List<ChatUi.ChatLine>();
 
 
 	
@@ -33,6 +36,26 @@ public class Chat : Node
 		stateStart = new ChatStateStart(){blackboard = this};
 		stateIdle = new ChatStateIdle(){blackboard = this};
 		stateRespond = new ChatStateRespond(){blackboard = this};
+
+		// set up chat start
+		// get chat from file
+        var chatLinesStartRaw = System.IO.File.ReadAllText(gameDirectory + startChatFileLocalDirectory).Split('\n');
+       
+        // convert chat lines from raw into objects
+        foreach(var chatLineStartRaw in chatLinesStartRaw)
+        {
+            chatStartLines.Add(new ChatUi.ChatLine(chatLineStartRaw));
+        }
+
+		// set up chat responses
+		// get chat from file
+		var chatLinesResponsesRaw = System.IO.File.ReadAllText(gameDirectory + responseChatFileLocalDirectory).Split('\n');
+
+		// convert chat lines from raw into objects
+		foreach(var chatLineReponseRaw in chatLinesResponsesRaw)
+		{
+			chatResponseLines.Add(new ChatUi.ChatLine(chatLineReponseRaw));
+		}
 
 		// set first state in machine
 		machine.SetState(stateStart);

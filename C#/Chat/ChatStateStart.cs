@@ -1,24 +1,24 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ChatStateStart : ChatState
 {
 
-    List<ChatUi.ChatLine> chatLines = new List<ChatUi.ChatLine>();
     float startTime = 0;
 
 
 
     public override void RunState(float delta)
     {
-        if(chatLines.Count == 0)
+        if(blackboard.chatStartLines.Count == 0)
         {
             // no more chat lines
             return;
         }
 
-        var chatLine = chatLines[0];
+        var chatLine = blackboard.chatStartLines[0];
 
         if(EngineTime.timePassed > startTime + chatLine.time)
         {
@@ -40,7 +40,7 @@ public class ChatStateStart : ChatState
             
 
             // remove sent chat from list
-            chatLines.Remove(chatLine);
+            blackboard.chatStartLines.Remove(chatLine);
         }
     }
 
@@ -50,14 +50,8 @@ public class ChatStateStart : ChatState
     {
         startTime = EngineTime.timePassed;
 
-        // get chat from file
-        var chatLinesRaw = System.IO.File.ReadAllText(blackboard.gameDirectory + blackboard.startChatFileLocalDirectory).Split('\n');
-       
-        // convert chat lines from raw into objects
-        foreach(var chatLineRaw in chatLinesRaw)
-        {
-            chatLines.Add(new ChatUi.ChatLine(chatLineRaw));
-        }
+        // set keywords label
+        blackboard.chatUi.SetKeywords(blackboard.chatResponseLines.Where(c => c.time > -1).Select(c => c.action).ToArray());
     }
 
 
@@ -72,7 +66,7 @@ public class ChatStateStart : ChatState
     public override State Transition()
     {
         // check if start chat lines are finished
-        if(chatLines.Count == 0 && EngineTime.timePassed > startTime + 2)
+        if(blackboard.chatStartLines.Count == 0 && EngineTime.timePassed > startTime + 2)
         {
             // idle
             return blackboard.stateIdle;

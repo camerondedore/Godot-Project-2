@@ -6,7 +6,7 @@ using System.Linq;
 public class ChatStateRespond : ChatState
 {
 
-    List<ChatUi.ChatLine> chatLines = new List<ChatUi.ChatLine>();
+    
     float startTime;
     bool responded;
 
@@ -22,7 +22,7 @@ public class ChatStateRespond : ChatState
             blackboard.chatUi.newUserMessage = "";
 
             // check for new message words in chat lines
-            var chatLineMatch = chatLines.Where(c => newMessageWords.Contains(c.action) && c.time > -1).FirstOrDefault();
+            var chatLineMatch = blackboard.chatResponseLines.Where(c => newMessageWords.Contains(c.action) && c.time > -1).FirstOrDefault();
 
             if(chatLineMatch != null)
             {
@@ -31,7 +31,7 @@ public class ChatStateRespond : ChatState
             else
             {
                 // get gibberish chat line
-                var chatLineMatchGibberish = chatLines.Where(c => c.time == -1).First();
+                var chatLineMatchGibberish = blackboard.chatResponseLines.Where(c => c.time == -1).First();
                 
                 blackboard.chatUi.AddMessage(chatLineMatchGibberish.user, chatLineMatchGibberish.color, chatLineMatchGibberish.message);
             }
@@ -47,18 +47,6 @@ public class ChatStateRespond : ChatState
     {
         startTime = EngineTime.timePassed;
         responded = false;
-
-        if(chatLines.Count == 0)
-        {
-            // get chat from file
-            var chatLinesRaw = System.IO.File.ReadAllText(blackboard.gameDirectory + blackboard.responseChatFileLocalDirectory).Split('\n');
-
-            // convert chat lines from raw into objects
-            foreach(var chatLineRaw in chatLinesRaw)
-            {
-                chatLines.Add(new ChatUi.ChatLine(chatLineRaw));
-            }
-        }
     }
 
 
