@@ -20,7 +20,8 @@ bg_color = Color( 0.162109, 0.162109, 0.162109, 1 )
 script = ExtResource( 6 )
 userMessagePath = NodePath("BackgroundRect/Container/UserMessage")
 chatHistoryPath = NodePath("BackgroundRect/Container/ChatHistory")
-keywordsPath = NodePath("BackgroundRect/KeywordsLabel")
+keywordsLabelPath = NodePath("BackgroundRect/Container/KeywordsLabel")
+roomLabelPath = NodePath("BackgroundRect/Container/RoomLabel")
 
 [node name="BackgroundRect" type="ColorRect" parent="ChatUi"]
 anchor_right = 1.0
@@ -55,28 +56,48 @@ text = "WefChat 3.4 (C) 2019-2034 - https://wefchat.org"
 valign = 1
 
 [node name="Container" type="Control" parent="ChatUi/BackgroundRect"]
-anchor_left = 0.05
-anchor_top = 0.1
-anchor_right = 0.95
-anchor_bottom = 0.9
+anchor_left = 0.02
+anchor_top = 0.05
+anchor_right = 0.98
+anchor_bottom = 0.95
 
 [node name="CharHistoryOutline" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
+anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 color = Color( 0.352941, 0.352941, 0.352941, 1 )
 
 [node name="ChatHistoryBackground" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
+anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 margin_left = 1.0
 margin_top = 1.0
 margin_right = -1.0
 margin_bottom = -1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="ChatHistory" type="RichTextLabel" parent="ChatUi/BackgroundRect/Container"]
+[node name="RoomLabel" type="Label" parent="ChatUi/BackgroundRect/Container"]
+anchor_right = 0.8
+anchor_bottom = 0.05
+theme = ExtResource( 1 )
+text = "#RoomName"
+
+[node name="LeaveButton2" type="Button" parent="ChatUi/BackgroundRect/Container"]
+anchor_left = 0.8
 anchor_right = 1.0
-anchor_bottom = 0.95
+anchor_bottom = 0.05
+margin_left = -0.279968
+margin_right = 0.400024
+theme = ExtResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 4 )
+text = "LEAVE ROOM"
+
+[node name="ChatHistory" type="RichTextLabel" parent="ChatUi/BackgroundRect/Container"]
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.9
 focus_mode = 2
 theme = ExtResource( 1 )
 bbcode_enabled = true
@@ -108,9 +129,9 @@ scroll_following = true
 selection_enabled = true
 
 [node name="UserMessage" type="LineEdit" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.95
+anchor_top = 0.9
 anchor_right = 0.8
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 focus_neighbour_right = NodePath("../SendButton")
 theme = ExtResource( 1 )
 max_length = 100
@@ -125,9 +146,9 @@ caret_blink_speed = 0.5
 
 [node name="SendButton" type="Button" parent="ChatUi/BackgroundRect/Container"]
 anchor_left = 0.8
-anchor_top = 0.95
+anchor_top = 0.9
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 margin_left = -0.279968
 margin_right = 0.400024
 theme = ExtResource( 1 )
@@ -135,11 +156,10 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 4 )
 text = "SEND MESSAGE"
 
-[node name="KeywordsLabel" type="Label" parent="ChatUi/BackgroundRect"]
-anchor_left = 0.05
-anchor_top = 0.92
-anchor_right = 0.95
-anchor_bottom = 0.98
+[node name="KeywordsLabel" type="Label" parent="ChatUi/BackgroundRect/Container"]
+anchor_top = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 1 )
 text = "/yes /no /who /when /where /what /equipment"
 
@@ -152,4 +172,5 @@ process_priority = -1
 script = ExtResource( 3 )
 
 [connection signal="pressed" from="ChatUi/BackgroundRect/TopBarRect/QuitButton" to="ChatUi" method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="ChatUi/BackgroundRect/Container/LeaveButton2" to="ChatUi" method="_on_LeaveButton2_pressed"]
 [connection signal="pressed" from="ChatUi/BackgroundRect/Container/SendButton" to="ChatUi" method="_on_SendButton_pressed"]

@@ -12,12 +12,14 @@ public class ChatUi : Node
 	[Export]
 	NodePath userMessagePath,
 		chatHistoryPath,
-		keywordsPath;
+		keywordsLabelPath,
+		roomLabelPath;
 
 	public string newUserMessage = "";
 	RichTextLabel chatHistory;
 	LineEdit userMessage;
-	Label keywords;
+	Label keywordsLabel, 
+		roomLabel;
 
 
 
@@ -26,13 +28,17 @@ public class ChatUi : Node
 		// get ui controls
 		userMessage = GetNode<LineEdit>(userMessagePath);
 		chatHistory = GetNode<RichTextLabel>(chatHistoryPath);
-		keywords = GetNode<Label>(keywordsPath);
+		keywordsLabel = GetNode<Label>(keywordsLabelPath);
+		roomLabel = GetNode<Label>(roomLabelPath);
 
 		// set user message box as focused
 		userMessage.GrabFocus();
 
 		// clear keywords
-		keywords.Text = "";
+		keywordsLabel.Text = "";
+
+		// set room label
+		roomLabel.Text = chatRoomName;
 	}
 
 
@@ -70,6 +76,15 @@ public class ChatUi : Node
 	private void _on_QuitButton_pressed()
 	{
 		// quit game
+		GetTree().Quit();
+	}
+
+
+
+	private void _on_LeaveButton2_pressed()
+	{
+		// change scene here
+		// tmp quit game
 		GetTree().Quit();
 	}
 
@@ -130,11 +145,24 @@ public class ChatUi : Node
 
 	public void SetKeywords(string[] words)
 	{
-		keywords.Text = "Keywords:";
+		keywordsLabel.Text = "Keywords:";
+
+		var i = 0;
 
 		foreach(var word in words)
 		{
-			keywords.Text = keywords.Text + " " + word;
+			if(i == 0)
+			{
+				// first keyword
+				keywordsLabel.Text = keywordsLabel.Text + " " + word;
+			}
+			else
+			{
+				// after first keyword
+				keywordsLabel.Text = keywordsLabel.Text + ", " + word;
+			}
+			
+			i++;
 		}
 	}
 
