@@ -21,8 +21,7 @@ public class Character : KinematicBody
 		landHeight = 3,
 		jumpStartTime = 0.1f;
 	[Export]
-	NodePath cameraSpringArmPath,
-		characterUiPath;
+	NodePath cameraControllerPath;
 	public float gravity,
 		maxSlopeAngleRad,
 		ySpeed,
@@ -30,8 +29,7 @@ public class Character : KinematicBody
 		fallStartY;
 	public Vector3 velocity,
 		snap = Vector3.Down;
-	public CameraSpringArm cameraSpringArm;
-	public CharacterUi characterUi;
+	public CameraControllerSimple cameraController;
 	public Disconnector jumpDisconnector = new Disconnector();
 
 	//string debugText;
@@ -49,9 +47,7 @@ public class Character : KinematicBody
 		maxSlopeAngleRad = Mathf.Pi / 180f * maxSlopeAngle;
 
 		// get nodes
-		//cameraSpringArm = GetNode<CameraSpringArm>("CameraSpringArm");
-		cameraSpringArm = GetNode<CameraSpringArm>(cameraSpringArmPath);
-		characterUi = GetNode<CharacterUi>(characterUiPath);
+		cameraController = GetNode<CameraControllerSimple>(cameraControllerPath);
 
 		// initialize states
 		stateIdle = new CharacterStateIdle(){blackboard = this};

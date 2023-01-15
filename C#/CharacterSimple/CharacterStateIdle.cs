@@ -23,7 +23,7 @@ public class CharacterStateIdle : CharacterState
 
 	
 		// get camera look vector
-		var cameraForward = -blackboard.cameraSpringArm.GlobalTransform.basis.z;
+		var cameraForward = -blackboard.cameraController.GlobalTransform.basis.z;
 		cameraForward.y = 0;
 		
 		// get camera look position
@@ -31,10 +31,6 @@ public class CharacterStateIdle : CharacterState
 		
 		// apply look
 		blackboard.LookAt(lookPosition, Vector3.Up);
-		
-
-		// camera follow
-		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalTransform.origin, blackboard.velocity);
 	}
 
 

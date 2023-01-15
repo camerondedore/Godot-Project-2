@@ -20,7 +20,7 @@ public class CharacterStateMove : CharacterState
 		moveDirection.z = PlayerInput.move.z;
 
 		// use camera space
-		moveDirection = moveDirection.Rotated(Vector3.Up, blackboard.cameraSpringArm.Rotation.y).Normalized();
+		moveDirection = moveDirection.Rotated(Vector3.Up, blackboard.cameraController.Rotation.y).Normalized();
 
 
 		// set up velocity using input
@@ -37,7 +37,7 @@ public class CharacterStateMove : CharacterState
 
 
 		// get camera look vector
-		var cameraForward = -blackboard.cameraSpringArm.GlobalTransform.basis.z;
+		var cameraForward = -blackboard.cameraController.GlobalTransform.basis.z;
 		cameraForward.y = 0;
 		
 		// get camera look position
@@ -45,10 +45,6 @@ public class CharacterStateMove : CharacterState
 		
 		// apply look
 		blackboard.LookAt(lookPosition, Vector3.Up);
-		
-
-		// camera follow
-		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalTransform.origin, blackboard.velocity);
 	}
 
 
