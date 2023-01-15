@@ -20,17 +20,6 @@ public class CharacterStateIdle : CharacterState
 		
 		// apply velocity
 		blackboard.velocity = blackboard.MoveAndSlideWithSnap(blackboard.velocity, blackboard.snap, Vector3.Up, true, 4, blackboard.maxSlopeAngleRad);
-
-	
-		// get camera look vector
-		var cameraForward = -blackboard.cameraController.GlobalTransform.basis.z;
-		cameraForward.y = 0;
-		
-		// get camera look position
-		var lookPosition = cameraForward + blackboard.GlobalTransform.origin;
-		
-		// apply look
-		blackboard.LookAt(lookPosition, Vector3.Up);
 	}
 
 
@@ -53,9 +42,6 @@ public class CharacterStateIdle : CharacterState
 	{
 		if(!blackboard.IsOnFloor())
 		{
-			// get start altitude
-			blackboard.fallStartY = blackboard.GlobalTransform.origin.y;
-
 			// fall
 			return blackboard.stateFall;
 		}

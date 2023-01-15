@@ -19,8 +19,8 @@ public class CharacterStateMove : CharacterState
 		moveDirection.x = PlayerInput.move.x;
 		moveDirection.z = PlayerInput.move.z;
 
-		// use camera space
-		moveDirection = moveDirection.Rotated(Vector3.Up, blackboard.cameraController.Rotation.y).Normalized();
+		// convert move direction to local space
+		moveDirection = moveDirection.Rotated(Vector3.Up, blackboard.Rotation.y).Normalized();
 
 
 		// set up velocity using input
@@ -34,17 +34,6 @@ public class CharacterStateMove : CharacterState
 
 		// apply velocity
 		blackboard.velocity = blackboard.MoveAndSlideWithSnap(blackboard.velocity, blackboard.snap, Vector3.Up, true, 4, blackboard.maxSlopeAngleRad);
-
-
-		// get camera look vector
-		var cameraForward = -blackboard.cameraController.GlobalTransform.basis.z;
-		cameraForward.y = 0;
-		
-		// get camera look position
-		var lookPosition = cameraForward + blackboard.GlobalTransform.origin;
-		
-		// apply look
-		blackboard.LookAt(lookPosition, Vector3.Up);
 	}
 
 
@@ -67,9 +56,6 @@ public class CharacterStateMove : CharacterState
 	{
 		if(!blackboard.IsOnFloor())
 		{
-			// get start altitude
-			blackboard.fallStartY = blackboard.GlobalTransform.origin.y;
-
 			// fall
 			return blackboard.stateFall;
 		}

@@ -12,16 +12,18 @@ collision_layer = 2
 collision_mask = 3
 collision/safe_margin = 0.01
 script = ExtResource( 1 )
+speed = 4.0
+acceleration = 10.0
+jumpHeight = 1.0
 cameraControllerPath = NodePath("CameraController")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="FloorDetector" type="Node" parent="."]
-
 [node name="CameraController" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
 script = ExtResource( 2 )
+characterNodePath = NodePath("..")
 minAngle = -80.0
 maxAngle = 80.0

@@ -4,10 +4,14 @@ using System;
 public class CameraControllerSimple : Spatial
 {
     
+	[Export]
+	NodePath characterNodePath;
     [Export]
 	float sensitivity = 0.15f,
 		minAngle = -50,
 		maxAngle = 40;
+
+	Character character;
 
 
 
@@ -15,6 +19,9 @@ public class CameraControllerSimple : Spatial
     {
         // lock cursor
 		Input.SetMouseMode(Input.MouseMode.Captured);
+
+		// get nodes
+		character = GetNode<Character>(characterNodePath);
     }
 
 
@@ -36,13 +43,17 @@ public class CameraControllerSimple : Spatial
 
 		if(e is InputEventMouseMotion)
 		{
-			var mouseDirection = RotationDegrees;
-			mouseDirection.x -= PlayerInput.look.y * sensitivity;
-			mouseDirection.x = Mathf.Clamp(mouseDirection.x, minAngle, maxAngle);
-			mouseDirection.y -= PlayerInput.look.x * sensitivity;
-			mouseDirection.y = Mathf.Wrap(mouseDirection.y, 0, 360);
+			var headRotation = RotationDegrees;
+			var bodyRotation = character.RotationDegrees;
 
-			RotationDegrees = mouseDirection;
+			headRotation.x -= PlayerInput.look.y * sensitivity;
+			headRotation.x = Mathf.Clamp(headRotation.x, minAngle, maxAngle);
+			bodyRotation.y -= PlayerInput.look.x * sensitivity;
+			bodyRotation.y = Mathf.Wrap(bodyRotation.y, 0, 360);
+
+			// apply rotation to head and body
+			RotationDegrees = headRotation;
+			character.RotationDegrees = bodyRotation;
 		}
 	}
 }

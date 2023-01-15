@@ -18,15 +18,12 @@ public class Character : KinematicBody
 		jumpHeight = 2.25f,
 		maxSlopeAngle = 40,
 		landTime = 0.1f,
-		landHeight = 3,
 		jumpStartTime = 0.1f;
 	[Export]
 	NodePath cameraControllerPath;
 	public float gravity,
 		maxSlopeAngleRad,
-		ySpeed,
-		jumpStartY,
-		fallStartY;
+		ySpeed;
 	public Vector3 velocity,
 		snap = Vector3.Down;
 	public CameraControllerSimple cameraController;
@@ -52,6 +49,7 @@ public class Character : KinematicBody
 		// initialize states
 		stateIdle = new CharacterStateIdle(){blackboard = this};
 		stateMove = new CharacterStateMove(){blackboard = this};
+		stateJumpStart = new CharacterStateJumpStart(){blackboard = this};
 		stateJump = new CharacterStateJump(){blackboard = this};
 		stateFall = new CharacterStateFall(){blackboard = this};
 		stateLand = new CharacterStateLand(){blackboard = this};

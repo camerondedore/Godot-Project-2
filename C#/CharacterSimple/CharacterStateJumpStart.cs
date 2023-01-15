@@ -1,14 +1,14 @@
 using Godot;
 using System;
 
-public class CharacterStateLand : CharacterState
+public class CharacterStateJumpStart : CharacterState
 {
 
     float startTime;
 
 
 
-	public override void RunState(float delta)
+    public override void RunState(float delta)
 	{
 		// set snap to grab floor
 		blackboard.snap = -blackboard.GetFloorNormal();
@@ -54,10 +54,10 @@ public class CharacterStateLand : CharacterState
 
 	public override State Transition()
 	{
-		if(EngineTime.timePassed > startTime + blackboard.landTime)
-		{
-			// move
-			return blackboard.stateIdle;
+		if(EngineTime.timePassed > startTime + blackboard.jumpStartTime)
+        {
+            // jump
+            return blackboard.stateJump;
 		}
 
 		return this;
