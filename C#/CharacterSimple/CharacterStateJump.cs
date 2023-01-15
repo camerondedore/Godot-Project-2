@@ -53,17 +53,11 @@ public class CharacterStateJump : CharacterState
 
 	public override State Transition()
 	{
-		if(blackboard.velocity.y < 0)
+		if(blackboard.velocity.y <= 0 && !blackboard.IsOnFloor())
         {
             // fall
             return blackboard.stateFall;
         }
-
-		if(!blackboard.IsOnFloor())
-		{	
-			// fall
-            return blackboard.stateFall;
-		}
 
 		if(blackboard.IsOnFloor())
 		{
