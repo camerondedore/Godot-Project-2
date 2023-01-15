@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.1
-height = 0.8
+radius = 0.2
+height = 1.4
 
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
