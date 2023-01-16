@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://C#/Camera/GlobalCamera.cs" type="Script" id=1]
+[ext_resource path="res://C#/PlayerInput.cs" type="Script" id=2]
+[ext_resource path="res://C#/Pause.cs" type="Script" id=3]
+[ext_resource path="res://C#/EngineTime.cs" type="Script" id=4]
+[ext_resource path="res://C#/PauseMenu.cs" type="Script" id=5]
+[ext_resource path="res://UI/ui-quit-button-hover.png" type="Texture" id=6]
+[ext_resource path="res://UI/chat-theme.tres" type="Theme" id=7]
+[ext_resource path="res://UI/ui-quit-button.png" type="Texture" id=8]
+
+[node name="GlobalCamera" type="Camera"]
+fov = 90.0
+script = ExtResource( 1 )
+
+[node name="PlayerInput" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="EngineTime" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Pause" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="PauseMenuCanvasLayer" type="CanvasLayer" parent="."]
+process_priority = -1
+script = ExtResource( 5 )
+menuPath = NodePath("PauseScreen")
+resumeButtonPath = NodePath("PauseScreen/PauseMenu/TopBarRect/ResumeButton")
+restartButtonPath = NodePath("PauseScreen/PauseMenu/Buttons/RestartButton")
+quitButtonPath = NodePath("PauseScreen/PauseMenu/Buttons/QuitButton")
+
+[node name="PauseScreen" type="Control" parent="PauseMenuCanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PauseMenu" type="Control" parent="PauseMenuCanvasLayer/PauseScreen"]
+anchor_left = 0.35
+anchor_top = 0.1
+anchor_right = 0.65
+anchor_bottom = 0.5
+
+[node name="MenuOutline" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.737255, 0.345098, 0, 1 )
+
+[node name="MenuBackground" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TopBarRect" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_right = -0.199951
+hint_tooltip = "Currently in Game"
+color = Color( 0.737255, 0.345098, 0, 1 )
+
+[node name="ResumeButton" type="TextureButton" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/TopBarRect"]
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.47998
+hint_tooltip = "Quit"
+theme = ExtResource( 7 )
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="WindowText" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/TopBarRect"]
+anchor_left = 0.01
+anchor_right = 0.9
+anchor_bottom = 1.0
+theme = ExtResource( 7 )
+text = "PAUSE MENU"
+valign = 1
+
+[node name="Buttons" type="Control" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.8
+
+[node name="RestartButton" type="Button" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Buttons"]
+anchor_right = 1.0
+anchor_bottom = 0.3
+margin_left = 0.399994
+margin_right = 0.599976
+theme = ExtResource( 7 )
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Buttons"]
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 0.6
+margin_left = 0.399994
+margin_right = -0.0096283
+margin_bottom = -7.62939e-06
+theme = ExtResource( 7 )
+text = "QUIT"

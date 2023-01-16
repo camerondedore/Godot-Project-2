@@ -3,7 +3,7 @@
 [ext_resource path="res://Fonts/courier-prime.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=3]
-draw_center = false
+bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -11,7 +11,7 @@ border_width_bottom = 1
 border_color = Color( 0.535156, 0.535156, 0.535156, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-draw_center = false
+bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -19,7 +19,7 @@ border_width_bottom = 1
 border_color = Color( 0.352941, 0.352941, 0.352941, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-draw_center = false
+bg_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
