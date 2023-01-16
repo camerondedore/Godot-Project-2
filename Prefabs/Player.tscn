@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://C#/CharacterSimple/Character.cs" type="Script" id=1]
 [ext_resource path="res://C#/Camera/CameraControllerSimple.cs" type="Script" id=2]
 [ext_resource path="res://C#/PlayerInteract.cs" type="Script" id=3]
 [ext_resource path="res://UI/chat-theme.tres" type="Theme" id=4]
 [ext_resource path="res://Fonts/courier-prime-title.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Audio/typewriter-key-2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/typewriter-key-3.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/typewriter-key-4.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/typewriter-bell.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/typewriter-key-1.wav" type="AudioStream" id=10]
+[ext_resource path="res://C#/AudioTools.cs" type="Script" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -39,7 +45,18 @@ cast_to = Vector3( 0, 0, -1.5 )
 collision_mask = 3
 script = ExtResource( 3 )
 itemLabelPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel")
-letterTimerPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel/Timer")
+letterTimerPath = NodePath("Timer")
+letterAudioPath = NodePath("LetterAudio")
+letterSounds = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+lettersCompleteSound = ExtResource( 9 )
+
+[node name="LetterAudio" type="AudioStreamPlayer3D" parent="CameraController/InteractRay"]
+unit_db = 1.0
+max_distance = 1.0
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="CameraController/InteractRay"]
+wait_time = 0.07
 
 [node name="InteractCanvasLayer" type="CanvasLayer" parent="CameraController/InteractRay"]
 process_priority = 1
@@ -79,6 +96,3 @@ text = "Item"
 align = 1
 valign = 1
 uppercase = true
-
-[node name="Timer" type="Timer" parent="CameraController/InteractRay/InteractCanvasLayer/InteractUi/ItemLabel"]
-wait_time = 0.05

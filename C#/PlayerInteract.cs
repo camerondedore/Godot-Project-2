@@ -6,10 +6,17 @@ public class PlayerInteract : RayCast
     
     [Export]
     NodePath itemLabelPath,
-        letterTimerPath;
+        letterTimerPath,
+        letterAudioPath;
+
+    [Export]
+    AudioStream[] letterSounds;
+    [Export]
+    AudioStream lettersCompleteSound;
 
     Label itemLabel;
     Timer letterTimer;
+    AudioTools letterAudio;
 
 
 
@@ -18,6 +25,7 @@ public class PlayerInteract : RayCast
         // get nodes
         itemLabel = GetNode<Label>(itemLabelPath);
         letterTimer = GetNode<Timer>(letterTimerPath);
+        letterAudio = GetNode<AudioTools>(letterAudioPath);
 
         // set up timer
         letterTimer.Connect("timeout", this, "AddLetter");
@@ -30,7 +38,16 @@ public class PlayerInteract : RayCast
 
     void AddLetter()
     {
+        if(itemLabel.VisibleCharacters >= itemLabel.Text.Length)
+        {
+            // done typing
+            letterTimer.Stop();
+            letterAudio.PlaySound((Node) this, lettersCompleteSound);
+            return;
+        }
+
         itemLabel.VisibleCharacters++;
+        letterAudio.PlayRandomSound((Node) this, letterSounds);
     }
 
 

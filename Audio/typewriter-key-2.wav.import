@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/typewriter-key-2.wav-966b1852c0609fb2ab8eb8b9fad04124.sample"
+
+[deps]
+
+source_file="res://Audio/typewriter-key-2.wav"
+dest_files=[ "res://.import/typewriter-key-2.wav-966b1852c0609fb2ab8eb8b9fad04124.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
