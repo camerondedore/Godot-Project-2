@@ -26,12 +26,6 @@ public class AudioTools : AudioStreamPlayer3D
         // GD.Randi() % n
         // gets random int from 0 to n - 1
 
-        var newAudioStreamPlayer = new AudioStreamPlayer3D();
-        creatorNode.AddChild(newAudioStreamPlayer);
-        newAudioStreamPlayer.Stream = sounds[GD.Randi() % sounds.Length];
-        newAudioStreamPlayer.MaxDistance = this.MaxDistance;
-        newAudioStreamPlayer.UnitSize = this.UnitSize;
-        newAudioStreamPlayer.Connect("finished", newAudioStreamPlayer, "queue_free");
-        newAudioStreamPlayer.Play();
+        PlaySound(creatorNode, sounds[GD.Randi() % sounds.Length]);
     }
 }

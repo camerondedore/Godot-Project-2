@@ -62,26 +62,37 @@ public class PlayerInteract : RayCast
         if(IsColliding())
         {
             var hitObject = (Spatial) GetCollider();
-            
-            // item in ray, set label to item name
-            if(itemLabel.Text != hitObject.Name)
+
+            if(hitObject is IInteractable)
             {
-                itemLabel.Text = hitObject.Name;
-                itemLabel.VisibleCharacters = 0;
-                itemLabel.PercentVisible = 0;
-                letterTimer.Start();
+                var hitObjectInteractable = (IInteractable) hitObject;
+
+                // interactable item in ray, set label to item name
+                if(itemLabel.Text != hitObjectInteractable.GetInteractableName())
+                {
+                    itemLabel.Text = hitObjectInteractable.GetInteractableName();
+                    itemLabel.VisibleCharacters = 0;
+                    itemLabel.PercentVisible = 0;
+                    letterTimer.Start();
+
+                    return;
+                }
+
+                if(itemLabel.Text == hitObjectInteractable.GetInteractableName())
+                {
+                    // interactable item in ray, label is already item name
+                    return;
+                }   
             }
         }
-        else
+
+        // no interactable item in ray, clear text
+        if(itemLabel.Text != "")
         {
-            // no item in ray, clear text
-            if(itemLabel.Text != "")
-            {
-                itemLabel.Text = "";
-                itemLabel.VisibleCharacters = 0;
-                itemLabel.PercentVisible = 0;
-                letterTimer.Stop();
-            }            
+            itemLabel.Text = "";
+            itemLabel.VisibleCharacters = 0;
+            itemLabel.PercentVisible = 0;
+            letterTimer.Stop();
         }
     }
 }
