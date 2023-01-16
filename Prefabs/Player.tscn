@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://C#/CharacterSimple/Character.cs" type="Script" id=1]
 [ext_resource path="res://C#/Camera/CameraControllerSimple.cs" type="Script" id=2]
+[ext_resource path="res://C#/PlayerInteract.cs" type="Script" id=3]
+[ext_resource path="res://UI/chat-theme.tres" type="Theme" id=4]
+[ext_resource path="res://Fonts/courier-prime-title.tres" type="DynamicFont" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -29,3 +32,53 @@ script = ExtResource( 2 )
 characterNodePath = NodePath("..")
 minAngle = -80.0
 maxAngle = 80.0
+
+[node name="InteractRay" type="RayCast" parent="CameraController"]
+enabled = true
+cast_to = Vector3( 0, 0, -1.5 )
+collision_mask = 3
+script = ExtResource( 3 )
+itemLabelPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel")
+letterTimerPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel/Timer")
+
+[node name="InteractCanvasLayer" type="CanvasLayer" parent="CameraController/InteractRay"]
+process_priority = 1
+
+[node name="InteractUi" type="Control" parent="CameraController/InteractRay/InteractCanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="CrosshairLabel" type="Label" parent="CameraController/InteractRay/InteractCanvasLayer/InteractUi"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -13.0
+margin_right = 15.0
+margin_bottom = 15.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+text = "+"
+align = 1
+valign = 1
+
+[node name="ItemLabel" type="Label" parent="CameraController/InteractRay/InteractCanvasLayer/InteractUi"]
+anchor_left = 0.3
+anchor_top = 0.6
+anchor_right = 0.7
+anchor_bottom = 0.65
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+text = "Item"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Timer" type="Timer" parent="CameraController/InteractRay/InteractCanvasLayer/InteractUi/ItemLabel"]
+wait_time = 0.05

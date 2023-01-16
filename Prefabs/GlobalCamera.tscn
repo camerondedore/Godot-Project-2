@@ -35,10 +35,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvasLayer/PauseScreen"]
-anchor_left = 0.35
+anchor_left = 0.4
 anchor_top = 0.1
-anchor_right = 0.65
-anchor_bottom = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.3
 
 [node name="MenuOutline" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
@@ -56,17 +56,17 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="TopBarRect" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
-anchor_bottom = 0.1
+anchor_bottom = 0.2
 margin_right = -0.199951
 hint_tooltip = "Currently in Game"
 color = Color( 0.737255, 0.345098, 0, 1 )
 
 [node name="ResumeButton" type="TextureButton" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/TopBarRect"]
-anchor_left = 0.9
+anchor_left = 0.88
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 0.47998
-hint_tooltip = "Quit"
+hint_tooltip = "RESUME"
 theme = ExtResource( 7 )
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 8 )
@@ -76,17 +76,17 @@ stretch_mode = 6
 
 [node name="WindowText" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/TopBarRect"]
 anchor_left = 0.01
-anchor_right = 0.9
+anchor_right = 0.88
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
 text = "PAUSE MENU"
 valign = 1
 
 [node name="Buttons" type="Control" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
-anchor_left = 0.25
-anchor_top = 0.2
-anchor_right = 0.75
-anchor_bottom = 0.8
+anchor_left = 0.05
+anchor_top = 0.25
+anchor_right = 0.95
+anchor_bottom = 0.95
 
 [node name="RestartButton" type="Button" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Buttons"]
 anchor_right = 1.0
@@ -94,6 +94,7 @@ anchor_bottom = 0.3
 margin_left = 0.399994
 margin_right = 0.599976
 theme = ExtResource( 7 )
+disabled = true
 text = "RESTART"
 
 [node name="QuitButton" type="Button" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Buttons"]
