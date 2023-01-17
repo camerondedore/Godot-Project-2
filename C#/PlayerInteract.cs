@@ -17,6 +17,8 @@ public class PlayerInteract : RayCast
     Label itemLabel;
     Timer letterTimer;
     AudioTools letterAudio;
+    Disconnector discon = new Disconnector();
+    IInteractable activeItem = null;
 
 
 
@@ -52,6 +54,17 @@ public class PlayerInteract : RayCast
 
 
 
+    public override void _Process(float delta)
+    {
+        if(discon.Trip(PlayerInput.interact))
+        {
+            // interact with item
+            activeItem.Interact(this);
+        }
+    }
+
+
+
     public override void _PhysicsProcess(float delta)
     {
         if(Engine.TimeScale == 0)
@@ -65,12 +78,12 @@ public class PlayerInteract : RayCast
 
             if(hitObject is IInteractable)
             {
-                var hitObjectInteractable = (IInteractable) hitObject;
+                activeItem = (IInteractable) hitObject;
 
                 // interactable item in ray, set label to item name
-                if(itemLabel.Text != hitObjectInteractable.GetInteractableName())
+                if(itemLabel.Text != activeItem.GetInteractableName())
                 {
-                    itemLabel.Text = hitObjectInteractable.GetInteractableName();
+                    itemLabel.Text = activeItem.GetInteractableName();
                     itemLabel.VisibleCharacters = 0;
                     itemLabel.PercentVisible = 0;
                     letterTimer.Start();
@@ -78,15 +91,18 @@ public class PlayerInteract : RayCast
                     return;
                 }
 
-                if(itemLabel.Text == hitObjectInteractable.GetInteractableName())
+                if(itemLabel.Text == activeItem.GetInteractableName())
                 {
                     // interactable item in ray, label is already item name
                     return;
                 }   
             }
         }
+    
+        // no interactable item in ray
+        activeItem = null;
 
-        // no interactable item in ray, clear text
+        // clear text
         if(itemLabel.Text != "")
         {
             itemLabel.Text = "";
