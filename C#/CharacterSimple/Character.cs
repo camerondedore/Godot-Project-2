@@ -18,9 +18,14 @@ public class Character : KinematicBody
 		jumpHeight = 2.25f,
 		maxSlopeAngle = 40,
 		landTime = 0.1f,
-		jumpStartTime = 0.1f;
+		jumpStartTime = 0.1f,
+		stepDistance = 0.75f;
 	[Export]
-	NodePath cameraControllerPath;
+	NodePath cameraControllerPath,
+		feetAudioPath;
+	[Export]
+	public AudioStream[] footstepSounds;
+
 	public float gravity,
 		maxSlopeAngleRad,
 		ySpeed;
@@ -28,6 +33,7 @@ public class Character : KinematicBody
 		snap = Vector3.Down;
 	public CameraControllerSimple cameraController;
 	public Disconnector jumpDisconnector = new Disconnector();
+	public AudioTools feetAudio;
 
 	//string debugText;
 
@@ -45,6 +51,7 @@ public class Character : KinematicBody
 
 		// get nodes
 		cameraController = GetNode<CameraControllerSimple>(cameraControllerPath);
+		feetAudio = GetNode<AudioTools>(feetAudioPath);
 
 		// initialize states
 		stateIdle = new CharacterStateIdle(){blackboard = this};

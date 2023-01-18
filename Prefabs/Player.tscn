@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://C#/CharacterSimple/Character.cs" type="Script" id=1]
 [ext_resource path="res://C#/Camera/CameraControllerSimple.cs" type="Script" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Audio/typewriter-key-1.wav" type="AudioStream" id=10]
 [ext_resource path="res://C#/AudioTools.cs" type="Script" id=11]
 [ext_resource path="res://Audio/interact-fail.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/footstep-2.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/footstep-1.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/footstep-3.wav" type="AudioStream" id=15]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -28,6 +31,8 @@ jumpHeight = 1.0
 landTime = 0.05
 jumpStartTime = 0.05
 cameraControllerPath = NodePath("CameraController")
+feetAudioPath = NodePath("FeetAudio")
+footstepSounds = [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 15 ) ]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )

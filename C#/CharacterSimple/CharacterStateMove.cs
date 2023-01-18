@@ -4,7 +4,7 @@ using System;
 public class CharacterStateMove : CharacterState
 {
 
-
+	float stepDistance = 0;
 
 
 
@@ -34,13 +34,24 @@ public class CharacterStateMove : CharacterState
 
 		// apply velocity
 		blackboard.velocity = blackboard.MoveAndSlideWithSnap(blackboard.velocity, blackboard.snap, Vector3.Up, true, 4, blackboard.maxSlopeAngleRad);
+
+
+		// add speed to step distance
+		stepDistance += blackboard.velocity.Length() * delta;
+
+		// check for stride
+		if(stepDistance > blackboard.stepDistance)
+		{
+			stepDistance = 0;
+			blackboard.feetAudio.PlayRandomSound((Node) blackboard, blackboard.footstepSounds);
+		}
 	}
 
 
 
 	public override void StartState()
 	{
-
+		stepDistance = 0;
 	}
 
 
