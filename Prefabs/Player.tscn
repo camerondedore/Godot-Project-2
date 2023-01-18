@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://C#/CharacterSimple/Character.cs" type="Script" id=1]
 [ext_resource path="res://C#/Camera/CameraControllerSimple.cs" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Audio/typewriter-bell.wav" type="AudioStream" id=9]
 [ext_resource path="res://Audio/typewriter-key-1.wav" type="AudioStream" id=10]
 [ext_resource path="res://C#/AudioTools.cs" type="Script" id=11]
+[ext_resource path="res://Audio/interact-fail.wav" type="AudioStream" id=12]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -46,11 +47,12 @@ collision_mask = 3
 script = ExtResource( 3 )
 itemLabelPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel")
 letterTimerPath = NodePath("Timer")
-letterAudioPath = NodePath("LetterAudio")
+interactAudioPath = NodePath("InteractAudio")
 letterSounds = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
 lettersCompleteSound = ExtResource( 9 )
+interactFailSound = ExtResource( 12 )
 
-[node name="LetterAudio" type="AudioStreamPlayer3D" parent="CameraController/InteractRay"]
+[node name="InteractAudio" type="AudioStreamPlayer3D" parent="CameraController/InteractRay"]
 unit_db = 1.0
 max_distance = 1.0
 script = ExtResource( 11 )
@@ -96,3 +98,9 @@ text = "Item"
 align = 1
 valign = 1
 uppercase = true
+
+[node name="FeetAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+unit_db = 1.0
+max_distance = 1.0
+script = ExtResource( 11 )

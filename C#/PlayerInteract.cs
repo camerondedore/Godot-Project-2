@@ -7,16 +7,17 @@ public class PlayerInteract : RayCast
     [Export]
     NodePath itemLabelPath,
         letterTimerPath,
-        letterAudioPath;
+        interactAudioPath;
 
     [Export]
     AudioStream[] letterSounds;
     [Export]
-    AudioStream lettersCompleteSound;
+    AudioStream lettersCompleteSound,
+        interactFailSound;
 
     Label itemLabel;
     Timer letterTimer;
-    AudioTools letterAudio;
+    AudioTools interactAudio;
     Disconnector discon = new Disconnector();
     IInteractable activeItem = null;
 
@@ -27,7 +28,7 @@ public class PlayerInteract : RayCast
         // get nodes
         itemLabel = GetNode<Label>(itemLabelPath);
         letterTimer = GetNode<Timer>(letterTimerPath);
-        letterAudio = GetNode<AudioTools>(letterAudioPath);
+        interactAudio = GetNode<AudioTools>(interactAudioPath);
 
         // set up timer
         letterTimer.Connect("timeout", this, "AddLetter");
@@ -44,12 +45,12 @@ public class PlayerInteract : RayCast
         {
             // done typing
             letterTimer.Stop();
-            letterAudio.PlaySound((Node) this, lettersCompleteSound);
+            interactAudio.PlaySound((Node) this, lettersCompleteSound);
             return;
         }
 
         itemLabel.VisibleCharacters++;
-        letterAudio.PlayRandomSound((Node) this, letterSounds);
+        interactAudio.PlayRandomSound((Node) this, letterSounds);
     }
 
 
@@ -58,8 +59,16 @@ public class PlayerInteract : RayCast
     {
         if(discon.Trip(PlayerInput.interact))
         {
-            // interact with item
-            activeItem.Interact(this);
+            if(activeItem != null)
+            {
+                // interact with item
+                activeItem.Interact(this);
+            }
+            else
+            {
+                // play fail audio
+                interactAudio.PlaySound((Node) this, interactFailSound);
+            }
         }
     }
 
