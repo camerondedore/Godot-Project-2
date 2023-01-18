@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class AudioTools : AudioStreamPlayer
+public class AudioTools3d : AudioStreamPlayer3D
 {
     
 
@@ -10,10 +10,12 @@ public class AudioTools : AudioStreamPlayer
 
     public void PlaySound(Node creatorNode, AudioStream sound)
     {
-        var newAudioStreamPlayer = new AudioStreamPlayer();
+        var newAudioStreamPlayer = new AudioStreamPlayer3D();
         creatorNode.AddChild(newAudioStreamPlayer);
         newAudioStreamPlayer.Stream = sound;
-        newAudioStreamPlayer.VolumeDb = this.VolumeDb;
+        newAudioStreamPlayer.MaxDistance = this.MaxDistance;
+        newAudioStreamPlayer.UnitSize = this.UnitSize;
+        newAudioStreamPlayer.UnitDb = this.UnitDb;
         newAudioStreamPlayer.Bus = this.Bus;
         newAudioStreamPlayer.Connect("finished", newAudioStreamPlayer, "queue_free");
         newAudioStreamPlayer.Play();

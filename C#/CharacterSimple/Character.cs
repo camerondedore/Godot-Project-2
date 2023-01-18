@@ -36,7 +36,7 @@ public class Character : KinematicBody
 		snap = Vector3.Down;
 	public CameraControllerSimple cameraController;
 	public Disconnector jumpDisconnector = new Disconnector();
-	public AudioTools feetAudio;
+	public AudioTools3d feetAudio;
 
 	//string debugText;
 
@@ -54,7 +54,7 @@ public class Character : KinematicBody
 
 		// get nodes
 		cameraController = GetNode<CameraControllerSimple>(cameraControllerPath);
-		feetAudio = GetNode<AudioTools>(feetAudioPath);
+		feetAudio = GetNode<AudioTools3d>(feetAudioPath);
 
 		// initialize states
 		stateIdle = new CharacterStateIdle(){blackboard = this};

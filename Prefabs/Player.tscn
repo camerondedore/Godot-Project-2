@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://C#/CharacterSimple/Character.cs" type="Script" id=1]
 [ext_resource path="res://C#/Camera/CameraControllerSimple.cs" type="Script" id=2]
@@ -10,13 +10,14 @@
 [ext_resource path="res://Audio/typewriter-key-4.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/typewriter-bell.wav" type="AudioStream" id=9]
 [ext_resource path="res://Audio/typewriter-key-1.wav" type="AudioStream" id=10]
-[ext_resource path="res://C#/AudioTools.cs" type="Script" id=11]
+[ext_resource path="res://C#/AudioTools3d.cs" type="Script" id=11]
 [ext_resource path="res://Audio/interact-fail.wav" type="AudioStream" id=12]
 [ext_resource path="res://Audio/footstep-2.wav" type="AudioStream" id=13]
 [ext_resource path="res://Audio/footstep-1.wav" type="AudioStream" id=14]
 [ext_resource path="res://Audio/footstep-3.wav" type="AudioStream" id=15]
 [ext_resource path="res://Audio/feet-land.wav" type="AudioStream" id=16]
 [ext_resource path="res://Audio/feet-jump.wav" type="AudioStream" id=17]
+[ext_resource path="res://C#/AudioTools.cs" type="Script" id=18]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -61,10 +62,8 @@ letterSounds = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResou
 lettersCompleteSound = ExtResource( 9 )
 interactFailSound = ExtResource( 12 )
 
-[node name="InteractAudio" type="AudioStreamPlayer3D" parent="CameraController/InteractRay"]
-unit_db = 1.0
-max_distance = 1.0
-script = ExtResource( 11 )
+[node name="InteractAudio" type="AudioStreamPlayer" parent="CameraController/InteractRay"]
+script = ExtResource( 18 )
 
 [node name="Timer" type="Timer" parent="CameraController/InteractRay"]
 wait_time = 0.07
@@ -110,6 +109,6 @@ uppercase = true
 
 [node name="FeetAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
-unit_db = 1.0
 max_distance = 1.0
+bus = "3d"
 script = ExtResource( 11 )
