@@ -41,6 +41,9 @@ public class CharacterStateLand : CharacterState
 	public override void StartState()
 	{
         startTime = EngineTime.timePassed;
+
+		// land audio
+		blackboard.feetAudio.PlaySound((Node) blackboard, blackboard.landSound);
 	}
 
 

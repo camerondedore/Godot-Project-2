@@ -25,6 +25,9 @@ public class Character : KinematicBody
 		feetAudioPath;
 	[Export]
 	public AudioStream[] footstepSounds;
+	[Export]
+	public AudioStream jumpSound,
+		landSound;
 
 	public float gravity,
 		maxSlopeAngleRad,

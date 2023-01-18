@@ -41,6 +41,9 @@ public class CharacterStateJumpStart : CharacterState
 	public override void StartState()
 	{
         startTime = EngineTime.timePassed;
+
+		// jump audio
+		blackboard.feetAudio.PlaySound((Node) blackboard, blackboard.jumpSound);
 	}
 
 
