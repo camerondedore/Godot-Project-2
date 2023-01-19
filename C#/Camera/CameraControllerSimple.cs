@@ -9,9 +9,12 @@ public class CameraControllerSimple : Spatial
     [Export]
 	float sensitivity = 0.15f,
 		minAngle = -50,
-		maxAngle = 40;
+		maxAngle = 40,
+		fovSpeed = 20;
 
 	Character character;
+	float normalFov,
+		targetFov;
 
 
 
@@ -22,6 +25,10 @@ public class CameraControllerSimple : Spatial
 
 		// get nodes
 		character = GetNode<Character>(characterNodePath);
+
+		// get fov
+		normalFov = GlobalCamera.camera.Fov;
+		targetFov = normalFov;
     }
 
 
@@ -30,6 +37,10 @@ public class CameraControllerSimple : Spatial
     {
         // update camera to match this node
         GlobalCamera.camera.LookAtFromPosition(GlobalTransform.origin, GlobalTransform.origin + GlobalTransform.basis.z * -10, Vector3.Up);
+
+		// update camera fov
+		targetFov = Mathf.Lerp(targetFov, normalFov, fovSpeed * delta);
+		GlobalCamera.camera.Fov = Mathf.Lerp(GlobalCamera.camera.Fov, targetFov, fovSpeed * delta);
     }
 
 
@@ -55,5 +66,12 @@ public class CameraControllerSimple : Spatial
 			RotationDegrees = headRotation;
 			character.RotationDegrees = bodyRotation;
 		}
+	}
+
+
+
+	public void SetTargetFov(float fov)
+	{
+		targetFov = fov;
 	}
 }

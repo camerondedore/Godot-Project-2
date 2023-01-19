@@ -44,6 +44,9 @@ public class CharacterStateLand : CharacterState
 
 		// land audio
 		blackboard.feetAudio.PlaySound((Node) blackboard, blackboard.landSound);
+
+		// camera
+		blackboard.cameraController.SetTargetFov(blackboard.cameraFovLand);
 	}
 
 

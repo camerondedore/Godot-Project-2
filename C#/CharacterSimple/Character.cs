@@ -19,7 +19,9 @@ public class Character : KinematicBody
 		maxSlopeAngle = 40,
 		landTime = 0.1f,
 		jumpStartTime = 0.1f,
-		stepDistance = 0.75f;
+		stepDistance = 0.75f,
+		cameraFovJump = 100,
+		cameraFovLand = 80;
 	[Export]
 	NodePath cameraControllerPath,
 		feetAudioPath;

@@ -44,11 +44,13 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="CameraController" type="Spatial" parent="."]
+process_priority = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
 script = ExtResource( 2 )
 characterNodePath = NodePath("..")
 minAngle = -80.0
 maxAngle = 80.0
+fovSpeed = 15.0
 
 [node name="InteractRay" type="RayCast" parent="CameraController"]
 enabled = true

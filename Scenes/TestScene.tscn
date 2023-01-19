@@ -14,11 +14,12 @@ extents = Vector3( 0.25, 0.25, 0.25 )
 
 [node name="TestScene" type="Spatial"]
 
+[node name="GlobalCamera" parent="." instance=ExtResource( 4 )]
+process_priority = -1
+transform = Transform( 0.851291, -0.227108, 0.472997, 0, 0.901471, 0.432839, -0.524694, -0.368472, 0.767414, 1.84174, 2.25666, 2.22318 )
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
-
-[node name="GlobalCamera" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.851291, -0.227108, 0.472997, 0, 0.901471, 0.432839, -0.524694, -0.368472, 0.767414, 1.84174, 2.25666, 2.22318 )
 
 [node name="Map" type="Spatial" parent="."]
 
