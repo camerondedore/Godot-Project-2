@@ -44,16 +44,14 @@ public class CharacterStateJumpStart : CharacterState
 
 		// jump audio
 		blackboard.feetAudio.PlaySound((Node) blackboard, blackboard.jumpSound);
-
-		// camera
-		blackboard.cameraController.SetTargetFov(blackboard.cameraFovJump);
 	}
 
 
 
 	public override void EndState()
 	{
-
+		// camera
+		blackboard.cameraController.SetTargetFov(blackboard.cameraFovJump);
 	}
 
 
