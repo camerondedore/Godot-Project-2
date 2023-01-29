@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/TestScene.exr-963cca8fe1d61340cf815730b9c53288.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/TestScene.exr"
+dest_files=[ "res://.import/TestScene.exr-963cca8fe1d61340cf815730b9c53288.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1
