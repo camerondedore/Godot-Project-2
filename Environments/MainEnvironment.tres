@@ -1,6 +1,7 @@
 [gd_resource type="Environment" format=2]
 
 [resource]
+fog_enabled = true
 fog_color = Color( 0.623529, 0.121569, 1, 0.219608 )
 fog_sun_color = Color( 1, 0.596078, 0.207843, 1 )
 fog_depth_end = 50.0
