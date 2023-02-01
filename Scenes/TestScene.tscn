@@ -58,11 +58,14 @@ transform = Transform( 0.186729, 0, 0.463824, 0, 0.5, 0, -0.463824, 0, 0.186729,
 [node name="PropBox5" parent="Map/Props" instance=ExtResource( 14 )]
 transform = Transform( -0.495529, 0, 0.0667164, 0, 0.5, 0, -0.0667164, 0, -0.495529, 9.22253, 0.2, 1.4425 )
 
+[node name="PropBox6" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 2.52284e-08, 0.442774, -0.232274, 0.5, -2.18557e-08, 1.26447e-08, 1.04449e-09, -0.232274, -0.442774, 9.04669, 0.2, 0.0594333 )
+
 [node name="PropBox2" parent="Map/Props" instance=ExtResource( 14 )]
-transform = Transform( 0.962436, 0, 0.271508, 0, 1, 0, -0.271508, 0, 0.962436, 5.6221, 0.5, 3.14155 )
+transform = Transform( -0.96208, 0, -0.272768, 0, 1, 0, 0.272768, 0, -0.96208, 5.6221, 0.5, 3.14155 )
 
 [node name="PropBox3" parent="Map/Props" instance=ExtResource( 14 )]
-transform = Transform( 0.42208, 0, -0.634591, 0, 0.75, 0, 0.906558, 0, 0.295456, 6.27405, 1.3729, 3.11281 )
+transform = Transform( 0.42208, 0, -0.634591, 0, 0.75, 0, 0.906558, 0, 0.295456, 6.27405, 1.3707, 3.11281 )
 
 [node name="tmpBuilding" type="StaticBody" parent="Map"]
 
