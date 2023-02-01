@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Models/level-1-depository_level-1-depository.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://Materials/pt-fence.tres" type="Material" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Materials/TmpWindowGlow.tres" type="Material" id=11]
 [ext_resource path="res://Materials/pt-wall.tres" type="Material" id=12]
 [ext_resource path="res://Scenes/TestScene.lmbake" type="BakedLightmapData" id=13]
+[ext_resource path="res://Prefabs/Props/PropBox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Materials/pt-wood.tres" type="Material" id=15]
 
 [sub_resource type="ConcavePolygonShape" id=3]
@@ -45,6 +46,23 @@ light_data = ExtResource( 13 )
 environment = ExtResource( 9 )
 
 [node name="Lighting" type="Spatial" parent="Map"]
+
+[node name="Props" type="Spatial" parent="Map"]
+
+[node name="PropBox" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.74391, 0.5, 3.3 )
+
+[node name="PropBox4" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 0.186729, 0, 0.463824, 0, 0.5, 0, -0.463824, 0, 0.186729, 9.11138, 0.2, 0.813982 )
+
+[node name="PropBox5" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( -0.495529, 0, 0.0667164, 0, 0.5, 0, -0.0667164, 0, -0.495529, 9.22253, 0.2, 1.4425 )
+
+[node name="PropBox2" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 0.962436, 0, 0.271508, 0, 1, 0, -0.271508, 0, 0.962436, 5.6221, 0.5, 3.14155 )
+
+[node name="PropBox3" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 0.42208, 0, -0.634591, 0, 0.75, 0, 0.906558, 0, 0.295456, 6.27405, 1.3729, 3.11281 )
 
 [node name="tmpBuilding" type="StaticBody" parent="Map"]
 
