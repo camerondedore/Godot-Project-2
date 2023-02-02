@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/chat-theme.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/courier-prime-title.tres" type="DynamicFont" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 3, 2 )
+
+[sub_resource type="ViewportTexture" id=2]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_texture = SubResource( 2 )
+
+[node name="TaskList" type="Spatial"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 600, 400 )
+disable_3d = true
+render_target_v_flip = true
+gui_disable_input = true
+
+[node name="TaskListUI" type="Control" parent="Viewport"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Viewport/TaskListUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_editor_description_": "f"
+}
+
+[node name="Label" type="Label" parent="Viewport/TaskListUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Task List"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
