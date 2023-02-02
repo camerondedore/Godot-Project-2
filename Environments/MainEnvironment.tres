@@ -2,13 +2,15 @@
 
 [resource]
 fog_enabled = true
-fog_color = Color( 0.623529, 0.121569, 1, 0.219608 )
+fog_color = Color( 0.623529, 0.121569, 1, 1 )
 fog_sun_color = Color( 1, 0.596078, 0.207843, 1 )
-fog_depth_end = 50.0
+fog_depth_begin = 5.0
+fog_depth_end = 60.0
 auto_exposure_min_luma = 0.1
 ssao_enabled = true
-ssao_intensity = 0.5
+ssao_intensity = 0.6
 ssao_radius2 = 0.2
+ssao_intensity2 = 0.8
 ssao_edge_sharpness = 25.0
 dof_blur_far_distance = 5.0
 dof_blur_far_transition = 0.21
