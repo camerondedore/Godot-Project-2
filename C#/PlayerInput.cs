@@ -12,7 +12,8 @@ public class PlayerInput : Node
 		jump,
 		fire1,
 		fire2,
-		interact;
+		interact,
+		objective;
 	public static bool isMouseMoving;
 
 
@@ -48,6 +49,7 @@ public class PlayerInput : Node
 		fire1 = Input.GetActionStrength("player-fire-1");
 		fire2 = Input.GetActionStrength("player-fire-2");
 		interact = Input.GetActionStrength("player-interact");
+		objective = Input.GetActionStrength("player-objective");
 
 		// set mouse moving to false, this will be reset by the unhandled input method
 		isMouseMoving = false;

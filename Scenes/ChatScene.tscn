@@ -30,15 +30,15 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="TopBarRect" type="ColorRect" parent="ChatUi/BackgroundRect"]
 anchor_right = 1.0
-anchor_bottom = 0.03
+margin_bottom = 30.0
 hint_tooltip = "Currently in #FaeRequestChat"
 color = Color( 0.737255, 0.345098, 0, 1 )
 
 [node name="QuitButton" type="TextureButton" parent="ChatUi/BackgroundRect/TopBarRect"]
-anchor_left = 0.98
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.47998
+margin_left = -30.0
 hint_tooltip = "Quit"
 theme = ExtResource( 1 )
 shortcut_in_tooltip = false
@@ -56,48 +56,51 @@ text = "WefChat 3.4 (C) 2019-2034 - https://wefchat.org"
 valign = 1
 
 [node name="Container" type="Control" parent="ChatUi/BackgroundRect"]
-anchor_left = 0.02
-anchor_top = 0.05
-anchor_right = 0.98
-anchor_bottom = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 35.0
+margin_right = -5.0
+margin_bottom = -5.0
 
 [node name="CharHistoryOutline" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 0.95
+anchor_bottom = 1.0
+margin_top = 30.0
+margin_bottom = -30.0
 color = Color( 0.352941, 0.352941, 0.352941, 1 )
 
 [node name="ChatHistoryBackground" type="ColorRect" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 0.95
+anchor_bottom = 1.0
 margin_left = 1.0
-margin_top = 1.0
+margin_top = 31.0
 margin_right = -1.0
-margin_bottom = -1.0
+margin_bottom = -31.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="RoomLabel" type="Label" parent="ChatUi/BackgroundRect/Container"]
 anchor_right = 0.8
-anchor_bottom = 0.05
+margin_bottom = 30.0
 theme = ExtResource( 1 )
 text = "#RoomName"
 
-[node name="LeaveButton2" type="Button" parent="ChatUi/BackgroundRect/Container"]
+[node name="LeaveButton" type="Button" parent="ChatUi/BackgroundRect/Container"]
 anchor_left = 0.8
 anchor_right = 1.0
-anchor_bottom = 0.05
 margin_left = -0.279968
 margin_right = 0.400024
+margin_bottom = 30.0
 theme = ExtResource( 1 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 4 )
 text = "LEAVE ROOM"
 
 [node name="ChatHistory" type="RichTextLabel" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.05
 anchor_right = 1.0
-anchor_bottom = 0.9
+anchor_bottom = 1.0
+margin_top = 30.0
+margin_bottom = -60.0
 focus_mode = 2
 theme = ExtResource( 1 )
 bbcode_enabled = true
@@ -129,9 +132,11 @@ scroll_following = true
 selection_enabled = true
 
 [node name="UserMessage" type="LineEdit" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.9
+anchor_top = 1.0
 anchor_right = 0.8
-anchor_bottom = 0.95
+anchor_bottom = 1.0
+margin_top = -60.0
+margin_bottom = -30.0
 focus_neighbour_right = NodePath("../SendButton")
 theme = ExtResource( 1 )
 max_length = 100
@@ -146,20 +151,23 @@ caret_blink_speed = 0.5
 
 [node name="SendButton" type="Button" parent="ChatUi/BackgroundRect/Container"]
 anchor_left = 0.8
-anchor_top = 0.9
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.95
+anchor_bottom = 1.0
 margin_left = -0.279968
+margin_top = -60.0
 margin_right = 0.400024
+margin_bottom = -30.0
 theme = ExtResource( 1 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 4 )
 text = "SEND MESSAGE"
 
 [node name="KeywordsLabel" type="Label" parent="ChatUi/BackgroundRect/Container"]
-anchor_top = 0.95
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -30.0
 theme = ExtResource( 1 )
 text = "/yes /no /who /when /where /what /equipment"
 
@@ -172,5 +180,5 @@ process_priority = -1
 script = ExtResource( 3 )
 
 [connection signal="pressed" from="ChatUi/BackgroundRect/TopBarRect/QuitButton" to="ChatUi" method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="ChatUi/BackgroundRect/Container/LeaveButton2" to="ChatUi" method="_on_LeaveButton2_pressed"]
+[connection signal="pressed" from="ChatUi/BackgroundRect/Container/LeaveButton" to="ChatUi" method="_on_LeaveButton2_pressed"]
 [connection signal="pressed" from="ChatUi/BackgroundRect/Container/SendButton" to="ChatUi" method="_on_SendButton_pressed"]
