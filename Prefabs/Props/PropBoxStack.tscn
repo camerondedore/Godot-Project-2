@@ -8,7 +8,7 @@ extents = Vector3( 0.625, 0.75, 0.625 )
 
 [node name="PropBoxStack" type="StaticBody"]
 
-[node name="prop-box-stack" type="MeshInstance" parent="."]
+[node name="Mesh" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 1 )
 

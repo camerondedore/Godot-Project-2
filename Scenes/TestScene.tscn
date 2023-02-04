@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Models/level-1-depository_level-1-depository.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://Materials/pt-fence.tres" type="Material" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Prefabs/GlobalCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://C#/TestInteractableProp.cs" type="Script" id=5]
 [ext_resource path="res://Prefabs/Props/PropBoxStack.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/Props/PropBoxWall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Environments/MainEnvironment.tres" type="Environment" id=9]
 [ext_resource path="res://Materials/pt-default.tres" type="Material" id=10]
 [ext_resource path="res://Materials/TmpWindowGlow.tres" type="Material" id=11]
@@ -57,7 +58,7 @@ transform = Transform( 0.579836, 0, -0.814733, 0, 1, 0, 0.814733, 0, 0.579836, 9
 transform = Transform( -0.068259, 0, -0.997668, 0, 1, 0, 0.997668, 0, -0.068259, 8.20778, 0.25, 1.02469 )
 
 [node name="PropBox4" parent="Map/Props" instance=ExtResource( 14 )]
-transform = Transform( -0.106021, 0, 0.994364, 0, 1, 0, -0.994364, 0, -0.106021, 2.84837, 1.75, -1.19803 )
+transform = Transform( -0.407024, 0, 0.913418, 0, 1, 0, -0.913418, 0, -0.407024, 4.44745, 1.75, -1.24592 )
 
 [node name="PropBox3" parent="Map/Props" instance=ExtResource( 14 )]
 transform = Transform( -0.819372, 0, 0.573262, 0, 1, 0, -0.573262, 0, -0.819372, 8.47948, 1.75, 0.34679 )
@@ -69,20 +70,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94167, 0.75, 0.0722463 )
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.69167, 0.75, 0.0722463 )
 
 [node name="PropBoxStack3" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.44167, 0.75, 0.0722463 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5, 0.75, 0.075 )
 
 [node name="PropBoxStack4" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.04167, 0.75, 3.27225 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0.75, 3.25 )
 
 [node name="PropBoxStack5" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.04167, 0.75, -1.22775 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 0.75, -1.25 )
 
 [node name="PropBoxStack6" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.79167, 0.75, -1.22775 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25, 0.75, -1.25 )
 
-[node name="tmpBuilding" type="StaticBody" parent="Map"]
+[node name="PropBoxWall" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.5, 0.75, -0.7 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Map/tmpBuilding"]
+[node name="PropBoxWall2" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99, 0.75, 3.13 )
+
+[node name="PropBoxWall3" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.86, 0.75, 3.5 )
+
+[node name="Building" type="StaticBody" parent="Map"]
+
+[node name="Mesh" type="MeshInstance" parent="Map/Building"]
 use_in_baked_light = true
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 10 )
@@ -91,10 +101,10 @@ material/2 = ExtResource( 15 )
 material/3 = ExtResource( 11 )
 material/4 = ExtResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Map/tmpBuilding"]
+[node name="CollisionShape" type="CollisionShape" parent="Map/Building"]
 shape = SubResource( 5 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="Map/tmpBuilding"]
+[node name="CollisionShape2" type="CollisionShape" parent="Map/Building"]
 shape = SubResource( 4 )
 
 [node name="Item1" type="StaticBody" parent="Map"]
