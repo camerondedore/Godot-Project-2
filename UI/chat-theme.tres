@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/courier-prime.tres" type="DynamicFont" id=1]
 
@@ -27,11 +27,13 @@ border_width_bottom = 1
 border_color = Color( 0.180392, 0.180392, 0.180392, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
+bg_color = Color( 0.507813, 0.507813, 0.507813, 0.25098 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=9]
+draw_center = false
 
 [sub_resource type="StyleBoxEmpty" id=6]
 content_margin_left = 3.0
@@ -62,7 +64,9 @@ default_font = ExtResource( 1 )
 Button/styles/hover = SubResource( 3 )
 Button/styles/normal = SubResource( 2 )
 Button/styles/pressed = SubResource( 4 )
-CheckBox/styles/normal = SubResource( 7 )
+CheckBox/styles/hover = SubResource( 7 )
+CheckBox/styles/normal = SubResource( 8 )
+CheckBox/styles/pressed = SubResource( 9 )
 Label/styles/normal = SubResource( 6 )
 LineEdit/styles/normal = SubResource( 1 )
 RichTextLabel/styles/normal = SubResource( 5 )

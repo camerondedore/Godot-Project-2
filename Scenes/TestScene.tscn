@@ -37,6 +37,7 @@ transform = Transform( 0.851291, -0.227108, 0.472997, 0, 0.901471, 0.432839, -0.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 
 [node name="TaskList" parent="." instance=ExtResource( 16 )]
+taskDescriptions = PoolStringArray( "Place perpetrator\'s fingerprints", "Place firearm casings", "Place remote weapon", "Place corrected CCTV tape" )
 
 [node name="Map" type="Spatial" parent="."]
 
@@ -72,19 +73,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94167, 0.75, 0.0722463 )
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.69167, 0.75, 0.0722463 )
 
 [node name="PropBoxStack3" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5, 0.75, 0.075 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.44, 0.75, 0.075 )
 
 [node name="PropBoxStack4" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0.75, 3.25 )
 
 [node name="PropBoxStack5" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 0.75, -1.25 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.44, 0.75, -1.25 )
 
 [node name="PropBoxStack6" parent="Map/Props" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25, 0.75, -1.25 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.19, 0.75, -1.25 )
 
 [node name="PropBoxWall" parent="Map/Props" instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.5, 0.75, -0.7 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.44, 0.75, -0.7 )
 
 [node name="PropBoxWall2" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99, 0.75, 3.13 )
@@ -114,7 +115,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 1.5, 2 )
 
 [node name="PropPipe3m2" parent="Map/Props" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.5, -1.7 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, 1.5, -2 )
 
 [node name="Building" type="StaticBody" parent="Map"]
 
@@ -149,7 +150,7 @@ material = ExtResource( 10 )
 shape = SubResource( 2 )
 
 [node name="Item2" type="StaticBody" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25238, 0.421428, 4.46995 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25238, 0.25, 4.46995 )
 script = ExtResource( 5 )
 propName = "Thing on wall"
 
