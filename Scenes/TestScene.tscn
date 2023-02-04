@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Models/level-1-depository_level-1-depository.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://Materials/pt-fence.tres" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://C#/TestInteractableProp.cs" type="Script" id=5]
 [ext_resource path="res://Prefabs/Props/PropBoxStack.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Prefabs/Props/PropBoxWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/Props/PropLightCeiling.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Environments/MainEnvironment.tres" type="Environment" id=9]
 [ext_resource path="res://Materials/pt-default.tres" type="Material" id=10]
 [ext_resource path="res://Materials/TmpWindowGlow.tres" type="Material" id=11]
@@ -89,6 +90,24 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99, 0
 
 [node name="PropBoxWall3" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.86, 0.75, 3.5 )
+
+[node name="PropLightCeiling" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -2 )
+
+[node name="PropLightCeiling2" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, 2 )
+
+[node name="PropLightCeiling3" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -2 )
+
+[node name="PropLightCeiling4" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, 2 )
+
+[node name="PropLightCeiling5" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, -2 )
+
+[node name="PropLightCeiling6" parent="Map/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 2 )
 
 [node name="Building" type="StaticBody" parent="Map"]
 
