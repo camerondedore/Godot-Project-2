@@ -57,6 +57,11 @@ public class PlayerInteract : RayCast
 
     public override void _Process(float delta)
     {
+        if(Engine.TimeScale == 0)
+		{
+			return;
+		}
+        
         if(discon.Trip(PlayerInput.interact))
         {
             if(activeItem != null)

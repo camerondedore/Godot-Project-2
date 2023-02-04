@@ -33,6 +33,10 @@ extents = Vector3( 0.25, 0.25, 0.25 )
 process_priority = -1
 transform = Transform( 0.851291, -0.227108, 0.472997, 0, 0.901471, 0.432839, -0.524694, -0.368472, 0.767414, 1.84174, 2.25666, 2.22318 )
 
+[node name="CSGSphere" type="CSGSphere" parent="GlobalCamera"]
+transform = Transform( 1, 0, -8.9407e-08, 1.19209e-07, 1, -5.96046e-08, -2.98023e-08, 0, 1, 0.261694, -0.209518, -0.551571 )
+radius = 0.1
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 
@@ -52,6 +56,14 @@ environment = ExtResource( 9 )
 
 [node name="Lighting" type="Spatial" parent="Map"]
 
+[node name="OmniLight" type="OmniLight" parent="Map/Lighting"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.57525, 2 )
+light_color = Color( 0.705882, 0, 1, 1 )
+light_energy = 3.0
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 4.0
+
 [node name="Props" type="Spatial" parent="Map"]
 
 [node name="PropBox" parent="Map/Props" instance=ExtResource( 14 )]
@@ -66,6 +78,12 @@ transform = Transform( -0.407024, 0, 0.913418, 0, 1, 0, -0.913418, 0, -0.407024,
 [node name="PropBox3" parent="Map/Props" instance=ExtResource( 14 )]
 transform = Transform( -0.819372, 0, 0.573262, 0, 1, 0, -0.573262, 0, -0.819372, 8.47948, 1.75, 0.34679 )
 
+[node name="PropBox5" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( -0.0448576, 0, -0.998993, 0, 1, 0, 0.998993, 0, -0.0448576, 2.89729, 1.75, 2.72225 )
+
+[node name="PropBox6" parent="Map/Props" instance=ExtResource( 14 )]
+transform = Transform( 1.35, 0, 0, 0, 1, 0, 0, 0, 1.15, 1.47544, 1.75, 3.59128 )
+
 [node name="PropBoxStack" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94167, 0.75, 0.0722463 )
 
@@ -78,14 +96,26 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.44, 0
 [node name="PropBoxStack4" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0.75, 3.25 )
 
+[node name="PropBoxStack9" parent="Map/Props" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.49, 0.75, 3.25 )
+
 [node name="PropBoxStack5" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.44, 0.75, -1.25 )
 
 [node name="PropBoxStack6" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.19, 0.75, -1.25 )
 
+[node name="PropBoxStack7" parent="Map/Props" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.19, 0.75, -5.25 )
+
+[node name="PropBoxStack8" parent="Map/Props" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.79, 0.75, -5.25 )
+
 [node name="PropBoxWall" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.44, 0.75, -0.7 )
+
+[node name="PropBoxWall4" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 3.94, 0.75, -4.25 )
 
 [node name="PropBoxWall2" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99, 0.75, 3.13 )
@@ -115,7 +145,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 1.5, 2 )
 
 [node name="PropPipe3m2" parent="Map/Props" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, 1.5, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 1.5, -1.7 )
 
 [node name="Building" type="StaticBody" parent="Map"]
 
