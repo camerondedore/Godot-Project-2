@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/Level1BookDepository.exr-b825d4de80493cd83a1f6e4485a240b0.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Level1BookDepository.exr"
+dest_files=[ "res://.import/Level1BookDepository.exr-b825d4de80493cd83a1f6e4485a240b0.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1

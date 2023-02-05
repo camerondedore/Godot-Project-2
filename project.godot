@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Project 2"
-run/main_scene="res://Scenes/ChatScene.tscn"
+run/main_scene="res://Scenes/ChatScene1BookDepository.tscn"
 config/icon="res://icon.png"
 
 [audio]
@@ -21,6 +21,8 @@ default_bus_layout="res://Audio/AudioBusTest.tres"
 [display]
 
 window/size/resizable=false
+window/size/borderless=true
+window/size/fullscreen=true
 
 [input]
 
