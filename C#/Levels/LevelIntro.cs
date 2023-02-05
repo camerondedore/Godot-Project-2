@@ -31,8 +31,12 @@ public class LevelIntro : Node
 
 
 
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	public override void _Process(float delta)
+	{
+		if(animationPlayer.IsPlaying() == false)
+		{
+			// clean up after animation is over
+			this.QueueFree();
+		}
+	}
 }
