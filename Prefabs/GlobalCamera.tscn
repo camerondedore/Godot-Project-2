@@ -78,9 +78,9 @@ expand = true
 stretch_mode = 6
 
 [node name="WindowText" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/TopBarRect"]
-anchor_left = 0.01
-anchor_right = 0.88
+anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 5.0
 theme = ExtResource( 7 )
 text = "PAUSE MENU"
 valign = 1
