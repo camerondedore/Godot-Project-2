@@ -18,10 +18,14 @@ bg_color = Color( 0.162109, 0.162109, 0.162109, 1 )
 
 [node name="ChatUi" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
+NextLevelPath = "res://Scenes/TestScene.tscn"
 userMessagePath = NodePath("BackgroundRect/Container/UserMessage")
 chatHistoryPath = NodePath("BackgroundRect/Container/ChatHistory")
 keywordsLabelPath = NodePath("BackgroundRect/Container/KeywordsLabel")
 roomLabelPath = NodePath("BackgroundRect/Container/RoomLabel")
+quitButtonPath = NodePath("BackgroundRect/TopBarRect/QuitButton")
+leaveButtonPath = NodePath("BackgroundRect/Container/LeaveButton")
+sendButtonPath = NodePath("BackgroundRect/Container/SendButton")
 
 [node name="BackgroundRect" type="ColorRect" parent="ChatUi"]
 anchor_right = 1.0
@@ -178,7 +182,3 @@ chatUiPath = NodePath("../ChatUi")
 [node name="EngineTime" type="Node" parent="."]
 process_priority = -1
 script = ExtResource( 3 )
-
-[connection signal="pressed" from="ChatUi/BackgroundRect/TopBarRect/QuitButton" to="ChatUi" method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="ChatUi/BackgroundRect/Container/LeaveButton" to="ChatUi" method="_on_LeaveButton2_pressed"]
-[connection signal="pressed" from="ChatUi/BackgroundRect/Container/SendButton" to="ChatUi" method="_on_SendButton_pressed"]

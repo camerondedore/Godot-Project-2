@@ -7,19 +7,26 @@ public class ChatUi : Node
 	[Export]
 	public string chatRoomName = "#FaeRequestChat",
 		playerName = "ruby",
-		playerColor = "#ff7700";
+		playerColor = "#ff7700",
+		NextLevelPath = "res://Scenes/TestScene";
 
 	[Export]
 	NodePath userMessagePath,
 		chatHistoryPath,
 		keywordsLabelPath,
-		roomLabelPath;
+		roomLabelPath,
+		quitButtonPath,
+		leaveButtonPath,
+		sendButtonPath;
 
 	public string newUserMessage = "";
 	RichTextLabel chatHistory;
 	LineEdit userMessage;
 	Label keywordsLabel, 
 		roomLabel;
+	TextureButton quitButton;
+	Button leaveButton,
+		sendButton;
 
 
 
@@ -30,6 +37,14 @@ public class ChatUi : Node
 		chatHistory = GetNode<RichTextLabel>(chatHistoryPath);
 		keywordsLabel = GetNode<Label>(keywordsLabelPath);
 		roomLabel = GetNode<Label>(roomLabelPath);
+		quitButton = GetNode<TextureButton>(quitButtonPath);
+		leaveButton = GetNode<Button>(leaveButtonPath);
+		sendButton = GetNode<Button>(sendButtonPath);
+
+		// set up buttons
+		quitButton.Connect("pressed", this, "QuitButtonPressed");
+		leaveButton.Connect("pressed", this, "LeaveButtonPressed");
+		sendButton.Connect("pressed", this, "SendButtonPressed");
 
 		// set user message box as focused
 		userMessage.GrabFocus();
@@ -49,13 +64,13 @@ public class ChatUi : Node
 		if(Input.GetActionStrength("chat_send_message") != 0)
 		{
 			// send message
-			_on_SendButton_pressed();
+			SendButtonPressed();
 		}
 	}
 
 
 
-	private void _on_SendButton_pressed()
+	private void SendButtonPressed()
 	{
 		// check for text
 		if(userMessage.Text.Length == 0)
@@ -73,7 +88,7 @@ public class ChatUi : Node
 
 
 
-	private void _on_QuitButton_pressed()
+	private void QuitButtonPressed()
 	{
 		// quit game
 		GetTree().Quit();
@@ -81,11 +96,10 @@ public class ChatUi : Node
 
 
 
-	private void _on_LeaveButton2_pressed()
+	private void LeaveButtonPressed()
 	{
-		// change scene here
-		// tmp quit game
-		GetTree().Quit();
+		// change scene
+		GetTree().ChangeScene(NextLevelPath);
 	}
 
 
