@@ -47,6 +47,7 @@ align = 2
 valign = 1
 
 [node name="TaskListOpen" type="Control" parent="TaskListContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 

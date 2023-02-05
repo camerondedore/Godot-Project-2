@@ -24,6 +24,7 @@ script = ExtResource( 3 )
 
 [node name="PauseMenuCanvasLayer" type="CanvasLayer" parent="."]
 process_priority = -1
+layer = 100
 script = ExtResource( 5 )
 menuPath = NodePath("PauseScreen")
 resumeButtonPath = NodePath("PauseScreen/PauseMenu/TopBarRect/ResumeButton")
@@ -38,9 +39,9 @@ anchor_bottom = 1.0
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -90.0
-margin_top = 50.0
+margin_top = 120.0
 margin_right = 90.0
-margin_bottom = 150.0
+margin_bottom = 220.0
 
 [node name="MenuOutline" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
