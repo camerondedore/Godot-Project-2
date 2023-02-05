@@ -9,6 +9,7 @@ extents = Vector3( 0.25, 0.25, 0.25 )
 [node name="PropBox" type="StaticBody"]
 
 [node name="Mesh" type="MeshInstance" parent="."]
+generate_lightmap = false
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 1 )
 

@@ -9,6 +9,7 @@ extents = Vector3( 0.75, 0.75, 0.375 )
 [node name="PropBoxWall" type="StaticBody"]
 
 [node name="Mesh" type="MeshInstance" parent="."]
+generate_lightmap = false
 mesh = ExtResource( 2 )
 material/0 = ExtResource( 1 )
 
