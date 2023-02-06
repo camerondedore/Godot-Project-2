@@ -94,22 +94,25 @@ public class PlayerInteract : RayCast
             {
                 activeItem = (IInteractable) hitObject;
 
-                // interactable item in ray, set label to item name
-                if(itemLabel.Text != activeItem.GetInteractableName())
+                if(activeItem.CanInteract())
                 {
-                    itemLabel.Text = activeItem.GetInteractableName();
-                    itemLabel.VisibleCharacters = 0;
-                    itemLabel.PercentVisible = 0;
-                    letterTimer.Start();
+                    // interactable item in ray, set label to item name
+                    if(itemLabel.Text != activeItem.GetInteractableName())
+                    {
+                        itemLabel.Text = activeItem.GetInteractableName();
+                        itemLabel.VisibleCharacters = 0;
+                        itemLabel.PercentVisible = 0;
+                        letterTimer.Start();
 
-                    return;
+                        return;
+                    }
+
+                    if(itemLabel.Text == activeItem.GetInteractableName())
+                    {
+                        // interactable item in ray, label is already item name
+                        return;
+                    }   
                 }
-
-                if(itemLabel.Text == activeItem.GetInteractableName())
-                {
-                    // interactable item in ray, label is already item name
-                    return;
-                }   
             }
         }
     
