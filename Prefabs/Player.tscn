@@ -55,7 +55,7 @@ fovSpeed = 15.0
 [node name="InteractRay" type="RayCast" parent="CameraController"]
 enabled = true
 cast_to = Vector3( 0, 0, -1.5 )
-collision_mask = 3
+collision_mask = 7
 script = ExtResource( 3 )
 itemLabelPath = NodePath("InteractCanvasLayer/InteractUi/ItemLabel")
 letterTimerPath = NodePath("Timer")

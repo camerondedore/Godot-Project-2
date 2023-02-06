@@ -87,6 +87,7 @@ player-objective={
 
 3d_physics/layer_1="default"
 3d_physics/layer_2="agent"
+3d_physics/layer_3="interact"
 
 [physics]
 
