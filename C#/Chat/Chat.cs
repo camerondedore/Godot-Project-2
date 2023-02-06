@@ -14,8 +14,8 @@ public class Chat : Node
 	NodePath chatUiPath;
 
 	[Export]
-	public string startChatFileLocalDirectory = "/c#/chat/chat-level-1-start.txt",
-		responseChatFileLocalDirectory = "/c#/chat/chat-level-1-responses.txt";
+	public string startChatFileLocalDirectory = "/chatfiles/chat-level-1-start.txt",
+		responseChatFileLocalDirectory = "/chatfiles/chat-level-1-responses.txt";
 
 	public string gameDirectory;
 	public ChatUi chatUi;

@@ -178,6 +178,8 @@ text = "/yes /no /who /when /where /what /equipment"
 [node name="Behavior" type="Node" parent="."]
 script = ExtResource( 5 )
 chatUiPath = NodePath("../ChatUi")
+startChatFileLocalDirectory = "/chatfiles/chat-level-1-start.txt"
+responseChatFileLocalDirectory = "/chatfiles/chat-level-1-responses.txt"
 
 [node name="EngineTime" type="Node" parent="."]
 process_priority = -1
