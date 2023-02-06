@@ -17,7 +17,10 @@ public class ChatUi : Node
 		roomLabelPath,
 		quitButtonPath,
 		leaveButtonPath,
-		sendButtonPath;
+		sendButtonPath,
+		chatAudioPath;
+	[Export]
+	AudioStream chatNotificationSound;
 
 	public string newUserMessage = "";
 	RichTextLabel chatHistory;
@@ -27,6 +30,7 @@ public class ChatUi : Node
 	TextureButton quitButton;
 	Button leaveButton,
 		sendButton;
+	AudioTools chatAudio;
 
 
 
@@ -40,6 +44,7 @@ public class ChatUi : Node
 		quitButton = GetNode<TextureButton>(quitButtonPath);
 		leaveButton = GetNode<Button>(leaveButtonPath);
 		sendButton = GetNode<Button>(sendButtonPath);
+		chatAudio = GetNode<AudioTools>(chatAudioPath);
 
 		// set up buttons
 		quitButton.Connect("pressed", this, "QuitButtonPressed");
@@ -79,7 +84,7 @@ public class ChatUi : Node
 			return;
 		}
 
-		AddMessage(playerName, playerColor, userMessage.Text);
+		AddMessage(playerName, playerColor, userMessage.Text, true);
 
 		newUserMessage = userMessage.Text;
 
@@ -104,7 +109,7 @@ public class ChatUi : Node
 
 
 
-	public void AddMessage(string user, string color, string message)
+	public void AddMessage(string user, string color, string message, bool isUser)
 	{
 		// HH:MM:SS    <user 8 char> | <message 100 char>
 		var userCapped = $"        {user}";
@@ -113,6 +118,11 @@ public class ChatUi : Node
 		var newMessage = $"\n{GetTime()}    [color={color}]{userCapped}[/color] | {message}";
 
 		chatHistory.AppendBbcode(newMessage);		
+
+		if(isUser == false)
+		{
+			chatAudio.PlaySound(this, chatNotificationSound);
+		}
 	}
 
 

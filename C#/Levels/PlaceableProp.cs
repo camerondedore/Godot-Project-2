@@ -10,13 +10,17 @@ public class PlaceableProp : Spatial, IInteractable
     [Export]
     NodePath taskListPath,
         placeholderModelPath,
-        placedModelPath;
+        placedModelPath,
+        placeAudioPath;
+    [Export]
+    AudioStream placedSound;
 
     public bool active = true;
 
     TaskList taskList;
     Spatial placeholderModel,
         placedModel;
+    AudioTools placeAudio;
 
 
 
@@ -26,6 +30,7 @@ public class PlaceableProp : Spatial, IInteractable
         taskList = GetNode<TaskList>(taskListPath);
         placeholderModel = GetNode<Spatial>(placeholderModelPath);
         placedModel = GetNode<Spatial>(placedModelPath);
+        placeAudio = GetNode<AudioTools>(placeAudioPath);
     }
 
     
@@ -44,6 +49,8 @@ public class PlaceableProp : Spatial, IInteractable
         active = false;
 
         taskList.CompleteTask(taskIndex);
+
+        placeAudio.PlaySound(this, placedSound);
     }
 
 

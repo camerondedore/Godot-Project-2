@@ -30,7 +30,7 @@ public class ChatStateStart : ChatState
             else if(chatLine.action == "message")
             {
                 // send chat
-                blackboard.chatUi.AddMessage(chatLine.user, chatLine.color, chatLine.message);
+                blackboard.chatUi.AddMessage(chatLine.user, chatLine.color, chatLine.message, false);
             }
             else if(chatLine.action == "logoff")
             {

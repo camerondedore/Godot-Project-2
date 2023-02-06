@@ -26,14 +26,14 @@ public class ChatStateRespond : ChatState
 
             if(chatLineMatch != null)
             {
-                blackboard.chatUi.AddMessage(chatLineMatch.user, chatLineMatch.color, chatLineMatch.message);
+                blackboard.chatUi.AddMessage(chatLineMatch.user, chatLineMatch.color, chatLineMatch.message, false);
             }
             else
             {
                 // get gibberish chat line
                 var chatLineMatchGibberish = blackboard.chatResponseLines.Where(c => c.time == -1).First();
                 
-                blackboard.chatUi.AddMessage(chatLineMatchGibberish.user, chatLineMatchGibberish.color, chatLineMatchGibberish.message);
+                blackboard.chatUi.AddMessage(chatLineMatchGibberish.user, chatLineMatchGibberish.color, chatLineMatchGibberish.message, false);
             }
             
 
