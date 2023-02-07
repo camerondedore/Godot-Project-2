@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://C#/Camera/GlobalCamera.cs" type="Script" id=1]
 [ext_resource path="res://C#/PlayerInput.cs" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://UI/ui-quit-button-hover.png" type="Texture" id=6]
 [ext_resource path="res://UI/chat-theme.tres" type="Theme" id=7]
 [ext_resource path="res://UI/ui-quit-button.png" type="Texture" id=8]
+[ext_resource path="res://Environments/MainEnvironment.tres" type="Environment" id=9]
+[ext_resource path="res://C#/SettingsUi.cs" type="Script" id=10]
+[ext_resource path="res://C#/Settings.cs" type="Script" id=11]
 
 [node name="GlobalCamera" type="Camera"]
 fov = 90.0
@@ -18,6 +21,10 @@ script = ExtResource( 2 )
 
 [node name="EngineTime" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="Settings" type="Node" parent="."]
+script = ExtResource( 11 )
+postEffectsReference = ExtResource( 9 )
 
 [node name="Pause" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -106,33 +113,37 @@ margin_bottom = 44.0
 theme = ExtResource( 7 )
 text = "QUIT"
 
-[node name="Settings" type="VBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+[node name="SettingsUi" type="VBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
 margin_left = 5.0
 margin_top = 90.0
 margin_right = -5.0
 margin_bottom = 195.0
+script = ExtResource( 10 )
+mouseSpinBoxPath = NodePath("Sensitivity/SpinBox")
+bloomCheckBoxPath = NodePath("Bloom")
+ssaoCheckBoxPath = NodePath("Ssao")
 
-[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi"]
 margin_right = 170.0
 margin_bottom = 24.0
 theme = ExtResource( 7 )
 text = "Settings:"
 uppercase = true
 
-[node name="Sensitivity" type="HBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+[node name="Sensitivity" type="HBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi"]
 margin_top = 28.0
 margin_right = 170.0
 margin_bottom = 52.0
 
-[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings/Sensitivity"]
+[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi/Sensitivity"]
 margin_right = 56.0
 margin_bottom = 24.0
 theme = ExtResource( 7 )
 text = "Mouse"
 uppercase = true
 
-[node name="SpinBox" type="SpinBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings/Sensitivity"]
+[node name="SpinBox" type="SpinBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi/Sensitivity"]
 margin_left = 60.0
 margin_right = 134.0
 margin_bottom = 24.0
@@ -141,16 +152,16 @@ max_value = 8.0
 step = 0.1
 value = 1.5
 
-[node name="Ssao" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+[node name="Bloom" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi"]
 margin_top = 56.0
 margin_right = 170.0
 margin_bottom = 74.0
 theme = ExtResource( 7 )
-text = "SSAO"
+text = "Bloom"
 
-[node name="Bloom" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+[node name="Ssao" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/SettingsUi"]
 margin_top = 78.0
 margin_right = 170.0
 margin_bottom = 96.0
 theme = ExtResource( 7 )
-text = "Bloom"
+text = "SSAO"

@@ -4,11 +4,11 @@ using System;
 public class CameraControllerSimple : Spatial
 {
     
+	public static float sensitivity = 0.15f;
 	[Export]
 	NodePath characterNodePath;
     [Export]
-	float sensitivity = 0.15f,
-		minAngle = -50,
+	float minAngle = -50,
 		maxAngle = 40,
 		fovSpeed = 20;
 
@@ -29,6 +29,9 @@ public class CameraControllerSimple : Spatial
 		// get fov
 		normalFov = GlobalCamera.camera.Fov;
 		targetFov = normalFov;
+
+		// get settings
+		sensitivity = Settings.currentSettings.mouse * 0.1f; // ui value is 10 times higher than real value for easier use
     }
 
 
