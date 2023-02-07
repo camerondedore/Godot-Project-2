@@ -41,7 +41,7 @@ anchor_right = 0.5
 margin_left = -90.0
 margin_top = 120.0
 margin_right = 90.0
-margin_bottom = 220.0
+margin_bottom = 320.0
 
 [node name="MenuOutline" type="ColorRect" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
@@ -87,11 +87,10 @@ valign = 1
 
 [node name="Buttons" type="VBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
 anchor_right = 1.0
-anchor_bottom = 1.0
 margin_left = 5.0
 margin_top = 35.0
 margin_right = -5.0
-margin_bottom = -5.0
+margin_bottom = 85.0
 
 [node name="RestartButton" type="Button" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Buttons"]
 margin_right = 170.0
@@ -106,3 +105,52 @@ margin_right = 170.0
 margin_bottom = 44.0
 theme = ExtResource( 7 )
 text = "QUIT"
+
+[node name="Settings" type="VBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu"]
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 90.0
+margin_right = -5.0
+margin_bottom = 195.0
+
+[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+margin_right = 170.0
+margin_bottom = 24.0
+theme = ExtResource( 7 )
+text = "Settings:"
+uppercase = true
+
+[node name="Sensitivity" type="HBoxContainer" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+margin_top = 28.0
+margin_right = 170.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings/Sensitivity"]
+margin_right = 56.0
+margin_bottom = 24.0
+theme = ExtResource( 7 )
+text = "Mouse"
+uppercase = true
+
+[node name="SpinBox" type="SpinBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings/Sensitivity"]
+margin_left = 60.0
+margin_right = 134.0
+margin_bottom = 24.0
+min_value = 0.5
+max_value = 8.0
+step = 0.1
+value = 1.5
+
+[node name="Ssao" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+margin_top = 56.0
+margin_right = 170.0
+margin_bottom = 74.0
+theme = ExtResource( 7 )
+text = "SSAO"
+
+[node name="Bloom" type="CheckBox" parent="PauseMenuCanvasLayer/PauseScreen/PauseMenu/Settings"]
+margin_top = 78.0
+margin_right = 170.0
+margin_bottom = 96.0
+theme = ExtResource( 7 )
+text = "Bloom"
