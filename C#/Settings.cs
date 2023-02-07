@@ -58,7 +58,7 @@ public class Settings : Node
 
 	public static void ApplySettings()
 	{
-		CameraControllerSimple.sensitivity = currentSettings.mouse * 0.1f; // ui value is 10 times higher than real value for easier use
+		CameraControllerSimple.sensitivity = currentSettings.mouse;
 		postEffects.GlowEnabled = Settings.currentSettings.bloom;
 		postEffects.SsaoEnabled = Settings.currentSettings.ssao;
 	}
@@ -68,7 +68,7 @@ public class Settings : Node
 	[System.Serializable]
 	public class PlayerSettings
 	{
-		public float mouse = 1.5f;
+		public float mouse = 10;
 		public bool bloom = true,
             ssao = true;
 	}

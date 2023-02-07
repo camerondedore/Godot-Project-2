@@ -31,7 +31,7 @@ public class CameraControllerSimple : Spatial
 		targetFov = normalFov;
 
 		// get settings
-		sensitivity = Settings.currentSettings.mouse * 0.1f; // ui value is 10 times higher than real value for easier use
+		sensitivity = Settings.currentSettings.mouse;
     }
 
 
@@ -48,27 +48,27 @@ public class CameraControllerSimple : Spatial
 
 
 
-    public override void _UnhandledInput(InputEvent e)
+    public override void _Process(float delta)
 	{	
 		if(Engine.TimeScale == 0)
 		{
 			return;
 		}
+		
+		var headRotation = RotationDegrees;
+		var bodyRotation = character.RotationDegrees;
 
-		if(e is InputEventMouseMotion)
-		{
-			var headRotation = RotationDegrees;
-			var bodyRotation = character.RotationDegrees;
+		headRotation.x -= PlayerInput.look.y * sensitivity * delta;
+		headRotation.x = Mathf.Clamp(headRotation.x, minAngle, maxAngle);
+		bodyRotation.y -= PlayerInput.look.x * sensitivity * delta;
+		bodyRotation.y = Mathf.Wrap(bodyRotation.y, 0, 360);
 
-			headRotation.x -= PlayerInput.look.y * sensitivity;
-			headRotation.x = Mathf.Clamp(headRotation.x, minAngle, maxAngle);
-			bodyRotation.y -= PlayerInput.look.x * sensitivity;
-			bodyRotation.y = Mathf.Wrap(bodyRotation.y, 0, 360);
-
-			// apply rotation to head and body
-			RotationDegrees = headRotation;
-			character.RotationDegrees = bodyRotation;
-		}
+		// apply rotation to head and body
+		RotationDegrees = headRotation;
+		character.RotationDegrees = bodyRotation;
+		
+		// clear mouse input
+		PlayerInput.look = Vector2.Zero;
 	}
 
 
