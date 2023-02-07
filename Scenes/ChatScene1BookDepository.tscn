@@ -20,7 +20,7 @@ bg_color = Color( 0.162109, 0.162109, 0.162109, 1 )
 
 [node name="ChatUi" type="CanvasLayer" parent="."]
 script = ExtResource( 6 )
-NextLevelPath = "res://Scenes/Level1BookDepository.tscn"
+nextLevelPath = "res://Scenes/Level1BookDepository.tscn"
 userMessagePath = NodePath("BackgroundRect/Container/UserMessage")
 chatHistoryPath = NodePath("BackgroundRect/Container/ChatHistory")
 keywordsLabelPath = NodePath("BackgroundRect/Container/KeywordsLabel")
