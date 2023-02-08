@@ -1,6 +1,6 @@
-0;logon;colfax;#9911ff;
-0;message;colfax;#9911ff;what's up, nerd?
-0.25;message;colfax;#9911ff;imma gunna gucci lit fam, bro.
-0.5;message;colfax;#9911ff;i don't understand why people are so stupid
-1;message;colfax;#9911ff;heading out, piece losers
-1.5;logoff;colfax;#9911ff;
+1;logon;colfax;#9911ff;
+2;message;colfax;#9911ff;what's up, nerd?
+2.25;message;colfax;#9911ff;imma gunna gucci lit fam, bro.
+3.5;message;colfax;#9911ff;i don't understand why people are so stupid
+5.5;message;colfax;#9911ff;heading out, piece losers
+6;logoff;colfax;#9911ff;
