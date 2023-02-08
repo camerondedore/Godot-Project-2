@@ -8,7 +8,7 @@ public class ChatUi : Node
 	public string chatRoomName = "#FaeRequestChat",
 		playerName = "ruby",
 		playerColor = "#ff7700",
-		nextLevelPath = "res://Scenes/TestScene";
+		nextLevelPath = "res://Scenes/TestScene.tscn";
 
 	[Export]
 	NodePath userMessagePath,
@@ -75,7 +75,7 @@ public class ChatUi : Node
 
 
 
-	private void SendButtonPressed()
+	void SendButtonPressed()
 	{
 		// check for text
 		if(userMessage.Text.Length == 0)
@@ -93,7 +93,7 @@ public class ChatUi : Node
 
 
 
-	private void QuitButtonPressed()
+	void QuitButtonPressed()
 	{
 		// quit game
 		GetTree().Quit();
@@ -101,7 +101,7 @@ public class ChatUi : Node
 
 
 
-	private void LeaveButtonPressed()
+	void LeaveButtonPressed()
 	{
 		// change scene
 		GetTree().ChangeScene(nextLevelPath);

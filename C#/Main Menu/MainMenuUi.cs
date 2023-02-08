@@ -10,7 +10,7 @@ public class MainMenuUi : Node
 		passwordEditPath,
 		loginFailedLabelPath;
 	[Export]
-	string nextLevelPath = "res://Scenes/ChatScene1BookDepository";
+	string nextLevelPath = "res://Scenes/ChatScene.tscn";
 
 	TextureButton quitButton;
 	Button loginButton;
@@ -47,7 +47,7 @@ public class MainMenuUi : Node
 
 
 
-	private void QuitButtonPressed()
+	void QuitButtonPressed()
 	{
 		// quit game
 		GetTree().Quit();
@@ -55,7 +55,7 @@ public class MainMenuUi : Node
 
 
 
-	private void LoginButtonPressed()
+	void LoginButtonPressed()
 	{
 		if(passwordEdit.Text.Length > 0)
 		{
