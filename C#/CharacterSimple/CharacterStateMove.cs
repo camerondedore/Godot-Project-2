@@ -25,7 +25,7 @@ public class CharacterStateMove : CharacterState
 
 
 		// apply gravity into floor
-		blackboard.velocity += blackboard.gravityMagnitude * blackboard.gravityUnitVector * delta;
+		//blackboard.velocity += blackboard.gravityMagnitude * blackboard.gravityUnitVector * delta;
 
 		// apply velocity
 		blackboard.velocity = blackboard.MoveAndSlideWithSnap(blackboard.velocity, blackboard.snap, Vector3.Up, true, 4, blackboard.maxSlopeAngleRad);

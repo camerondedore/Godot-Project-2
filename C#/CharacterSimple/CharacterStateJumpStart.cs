@@ -25,7 +25,7 @@ public class CharacterStateJumpStart : CharacterState
 
 
 		// apply gravity
-		blackboard.velocity.y += -blackboard.gravityMagnitude * delta;
+		//blackboard.velocity.y += -blackboard.gravityMagnitude * delta;
 
 
 		// apply velocity
