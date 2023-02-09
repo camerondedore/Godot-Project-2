@@ -31,7 +31,8 @@ public class Character : KinematicBody
 	public AudioStream jumpSound,
 		landSound;
 
-	public float gravity,
+	public Vector3 gravityUnitVector;
+	public float gravityMagnitude,
 		maxSlopeAngleRad,
 		ySpeed;
 	public Vector3 velocity,
@@ -47,9 +48,10 @@ public class Character : KinematicBody
 	public override void _Ready()
 	{
 		// get gravity
-		var gravityVector = (Vector3) ProjectSettings.GetSetting("physics/3d/default_gravity_vector");
-		var gravityMagnitude = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
-		gravity = gravityVector.y * gravityMagnitude;
+		gravityUnitVector = (Vector3) ProjectSettings.GetSetting("physics/3d/default_gravity_vector");
+		gravityMagnitude = (float) ProjectSettings.GetSetting("physics/3d/default_gravity");
+
+		snap = gravityUnitVector * 3;
 		
 		// calculate angles in radians
 		maxSlopeAngleRad = Mathf.Pi / 180f * maxSlopeAngle;

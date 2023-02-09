@@ -10,10 +10,6 @@ public class CharacterStateJumpStart : CharacterState
 
     public override void RunState(float delta)
 	{
-		// set snap to grab floor
-		blackboard.snap = -blackboard.GetFloorNormal();
-
-		
 		// get input
 		var moveDirection = Vector3.Zero;
 		moveDirection.x = PlayerInput.move.x;
@@ -29,7 +25,7 @@ public class CharacterStateJumpStart : CharacterState
 
 
 		// apply gravity
-		blackboard.velocity.y += blackboard.gravity * delta;
+		blackboard.velocity.y += -blackboard.gravityMagnitude * delta;
 
 
 		// apply velocity

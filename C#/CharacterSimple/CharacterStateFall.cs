@@ -25,7 +25,7 @@ public class CharacterStateFall : CharacterState
 		
 
 		// apply gravity using persistent y
-		blackboard.ySpeed += blackboard.gravity * delta;
+		blackboard.ySpeed += -blackboard.gravityMagnitude * delta;
 		blackboard.velocity.y = blackboard.ySpeed;
 
 
@@ -39,9 +39,6 @@ public class CharacterStateFall : CharacterState
 	{
 		// set y to match previous velocity.y
 		blackboard.ySpeed = blackboard.velocity.y;
-
-		// set snap to zero to release from floor
-		blackboard.snap = Vector3.Zero;
 	}
 
 

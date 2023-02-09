@@ -15,7 +15,7 @@ public class CharacterStateIdle : CharacterState
 		blackboard.velocity.z = Mathf.Lerp(blackboard.velocity.z, 0, delta * blackboard.acceleration);
 
 		// apply gravity into floor
-		blackboard.velocity += blackboard.gravity * blackboard.GetFloorNormal() * delta;
+		blackboard.velocity += blackboard.gravityMagnitude * blackboard.gravityUnitVector * delta;
 		
 		
 		// apply velocity
@@ -26,7 +26,7 @@ public class CharacterStateIdle : CharacterState
 
 	public override void StartState()
 	{
-		blackboard.snap = Vector3.Down;
+		
 	}
 
 
