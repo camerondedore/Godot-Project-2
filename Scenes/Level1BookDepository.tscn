@@ -158,6 +158,126 @@ transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 8.94262
 [node name="PropBoxWall" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.44, 0.75, -0.7 )
 
+[node name="PropBox7" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.03776, 3.75, 7.47797 )
+
+[node name="PropBox37" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -5.90104e-08, 0, 0.72, 0, 0.81, 0, -1.35, 0, -3.14722e-08, 5.60913, 3.7025, 11.1662 )
+
+[node name="PropBox42" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -5.90104e-08, 0, 0.72, 0, 0.81, 0, -1.35, 0, -3.14722e-08, 5.60552, 4.10672, 11.1782 )
+
+[node name="PropBox44" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -5.90104e-08, 0, 0.72, 0, 0.81, 0, -1.35, 0, -3.14722e-08, 5.60552, 4.89761, 11.1782 )
+
+[node name="PropBox43" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -2.19943e-07, 0, -0.72, 0, 0.81, 0, 1.35, 0, -1.17303e-07, 5.60642, 4.50335, 11.1782 )
+
+[node name="PropBox41" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -5.90104e-08, 0, -0.72, 0, 0.81, 0, 1.35, 0, -3.14722e-08, 5.97903, 3.7025, 11.1682 )
+
+[node name="PropBox26" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -2.85905e-08, 0, 0.654075, 0, 0.7695, 0, -0.9747, 0, -4.26055e-08, 6.63125, 3.69634, 9.93958 )
+
+[node name="PropBox28" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, 0, -9.26546e-09, 0, 0.7695, 0, 1.24266e-08, 0, 0.72675, 7.06112, 3.69634, 10.005 )
+
+[node name="PropBox38" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, -1.54725e-07, -5.55436e-15, 0, -3.86813e-08, 0.72675, -1.70422e-07, -0.884925, -3.17673e-08, 7.0521, 4.97884, 9.99551 )
+
+[node name="PropBox39" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, 5.62574e-08, -2.01954e-15, 0, -3.86813e-08, -0.72675, -6.19646e-08, 0.884925, -3.17673e-08, 7.54315, 4.40301, 9.99551 )
+
+[node name="PropBox40" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -0.9747, -1.3362e-07, 4.79672e-15, 0, -3.86813e-08, -0.72675, 1.47176e-07, -0.884925, 3.17673e-08, 7.54315, 4.77393, 9.99551 )
+
+[node name="PropBox29" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, -7.47465e-08, 6.35345e-08, -7.66899e-08, -0.7695, 6.33521e-08, 8.5211e-08, -8.28132e-08, -0.72675, 7.55406, 3.69634, 10.005 )
+
+[node name="PropBox27" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -2.85905e-08, 0, 0.654075, 0, 0.7695, 0, -0.9747, 0, -4.26055e-08, 6.29354, 3.69634, 9.93958 )
+
+[node name="PropBox30" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -0.9747, 0, -9.87626e-08, 0, 0.7695, 0, 1.47176e-07, 0, -0.654075, 6.53315, 4.08109, 10.0041 )
+
+[node name="PropBox33" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, 0, 9.74648e-09, 0, 0.7695, 0, -1.45242e-08, 0, 0.654075, 6.53315, 4.46897, 10.0041 )
+
+[node name="PropBox34" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -0.9747, 0, 9.87626e-08, 0, 0.654075, 0, -1.47176e-07, 0, -0.654075, 6.53315, 4.8218, 10.0088 )
+
+[node name="PropBox31" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -0.9747, -1.16191e-07, 4.31705e-15, 0, -3.36359e-08, -0.654075, 1.47176e-07, -0.7695, 2.85905e-08, 7.03753, 4.05376, 10.0041 )
+
+[node name="PropBox35" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, -1.16191e-07, -3.88535e-15, 0, -3.36359e-08, 0.588668, -1.47176e-07, -0.7695, -2.57315e-08, 7.03753, 4.36651, 9.98603 )
+
+[node name="PropBox36" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, 1.16191e-07, -3.88535e-15, 0, -3.36359e-08, -0.588668, -1.47176e-07, 0.7695, -2.57315e-08, 7.03753, 4.66093, 10.0041 )
+
+[node name="PropBox32" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.9747, 4.89194e-08, -1.81759e-15, 0, -3.36359e-08, -0.654075, -6.19646e-08, 0.7695, -2.85905e-08, 7.53674, 4.05376, 9.97548 )
+
+[node name="PropBox14" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.0773, 0, -1.10076e-07, 0, 0.81225, 0, 1.62668e-07, 0, -0.729, 9.01397, 4.06885, 10.0477 )
+
+[node name="PropBox16" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.0773, 0, -1.10076e-07, 0, 0.81225, 0, 1.62668e-07, 0, -0.729, 9.01397, 4.86985, 10.0477 )
+
+[node name="PropBox15" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 1.07623, 0, -0.0324975, 0, 0.81225, 0, 0.048024, 0, 0.728276, 9.01512, 4.46485, 10.0338 )
+
+[node name="PropBox22" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 1.0773, 0, 0, 0, 0.81225, 0, 0, 0, 0.729, 9.03973, 4.42803, 9.63474 )
+
+[node name="PropBox25" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.853534, 0, -0.0908692, 0, 0.731025, 0, 0.119364, 0, 0.649777, 9.03973, 4.40203, 9.23837 )
+
+[node name="PropBox11" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.035, 0, -1.08717e-07, 0, 0.9, 0, 1.56281e-07, 0, -0.72, 9.01629, 3.72685, 10.4192 )
+
+[node name="PropBox13" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 1.035, -2.14577e-07, -7.50356e-15, 0, -3.93403e-08, 0.72, -2.46763e-07, -0.9, -3.14722e-08, 9.04579, 3.68185, 9.99673 )
+
+[node name="PropBox19" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 1.035, -2.14577e-07, -7.50356e-15, 0, -3.93403e-08, 0.72, -2.46763e-07, -0.9, -3.14722e-08, 9.04579, 3.68185, 8.62624 )
+
+[node name="PropBox17" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.035, 3.50473e-07, 1.22557e-14, 0, -3.93403e-08, 0.72, 4.03044e-07, 0.9, 3.14722e-08, 9.05441, 3.68185, 9.54055 )
+
+[node name="PropBox20" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 4.48285e-07, 0.9, 3.14722e-08, 0, -3.93403e-08, 0.72, 1.035, -3.89813e-07, -1.36314e-14, 9.02762, 4.04185, 9.59538 )
+
+[node name="PropBox21" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -6.6215e-07, -0.9, -3.14722e-08, 0, -3.93403e-08, 0.72, -1.035, 5.75782e-07, 2.01346e-14, 9.02762, 4.04185, 9.05986 )
+
+[node name="PropBox18" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.035, -3.50473e-07, 1.22557e-14, 0, -3.93403e-08, -0.72, 4.03044e-07, -0.9, 3.14722e-08, 9.05441, 3.68185, 9.08471 )
+
+[node name="PropBox12" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 2.01522e-07, 0, -0.72, 0, 0.855, 0, 1.035, 0, 1.40189e-07, 9.50449, 3.7156, 10.2269 )
+
+[node name="PropBox23" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.68623e-07, 0, 0.72, 0, 0.855, 0, -1.035, 0, -1.17303e-07, 9.50449, 3.7156, 9.6921 )
+
+[node name="PropBox24" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -1.68623e-07, 0, 0.72, 0, 0.855, 0, -1.035, 0, -1.17303e-07, 9.50449, 3.7156, 9.15292 )
+
+[node name="PropBox9" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( -0.585088, -0.321394, -1.67424e-08, -3.33858e-08, 9.55343e-16, 0.5, -0.490947, 0.383022, -1.40486e-08, 7.8839, 4.11255, 11.2434 )
+
+[node name="PropBox10" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 0.624193, -0.275879, -0.0831827, -0.0172289, 0.128917, -0.482963, 0.439823, 0.396574, 0.0991333, 7.82505, 3.96503, 11.5727 )
+
+[node name="PropBox8" parent="Map/Props" instance=ExtResource( 4 )]
+transform = Transform( 3.26511e-08, 0.758103, 0.488519, 0.9751, -4.32582e-08, 0, 2.73975e-08, 0.636124, -0.582194, 7.9312, 3.74377, 11.2272 )
+
+[node name="PropBoxStack10" parent="Map/Props" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.94681, 4.25, 7.40106 )
+
+[node name="PropBoxWall5" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.54654, 4.25, 8.11829 )
+
 [node name="PropBoxWall4" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 8.09262, 0.75, -3.2602 )
 
@@ -187,6 +307,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 2 )
 
 [node name="PropPipe3m" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 1.5, 2 )
+
+[node name="PropPipe3m3" parent="Map/Props" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 9.19262, 5, 11.3624 )
+
+[node name="PropPipe3m4" parent="Map/Props" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 9.36428, 5, 11.3624 )
 
 [node name="PropPipe3m2" parent="Map/Props" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 1.5, -1.7 )
@@ -282,7 +408,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18433, 0.625, -0.922141 )
 transform = Transform( 0.998019, 0, -0.0629124, 0, 1, 0, 0.0629124, 0, 0.998019, 6.9953, 0.625, -0.976984 )
 
 [node name="PlaceableFingerPrints" type="StaticBody" parent="Map"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36207, 1.18926, 3.89486 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.37049, 4.68926, 11.5972 )
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 21 )
@@ -353,7 +479,7 @@ shape = SubResource( 2 )
 script = ExtResource( 28 )
 
 [node name="PlaceableProp" type="StaticBody" parent="Map"]
-transform = Transform( 0.491922, 0, -0.870639, 0, 1, 0, 0.870639, 0, 0.491922, 5.21866, 0.261798, 3.17033 )
+transform = Transform( 0.491922, 0, -0.870639, 0, 1, 0, 0.870639, 0, 0.491922, 6.80727, 3.7618, 11.2905 )
 script = ExtResource( 21 )
 propName = "place firearm casings"
 taskIndex = 1
