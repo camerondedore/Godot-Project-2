@@ -31,7 +31,7 @@ public class ChatStateRespond : ChatState
             else
             {
                 // get gibberish chat line
-                var chatLineMatchGibberish = blackboard.chatResponseLines.Where(c => c.time == -1).First();
+                var chatLineMatchGibberish = blackboard.chatResponseLines.Where(c => c.action == "gibberish").First();
                 
                 blackboard.chatUi.AddMessage(chatLineMatchGibberish.user, chatLineMatchGibberish.color, chatLineMatchGibberish.message, false);
             }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UI/chat-theme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/ui-quit-button.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://C#/AudioTools.cs" type="Script" id=7]
 [ext_resource path="res://Audio/chat-notification.wav" type="AudioStream" id=8]
 [ext_resource path="res://Fonts/courier-prime-title.tres" type="DynamicFont" id=9]
+[ext_resource path="res://ChatFiles/ChatLevel1Start.tres" type="Resource" id=10]
+[ext_resource path="res://ChatFiles/ChatLevel1Responses.tres" type="Resource" id=11]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
@@ -64,6 +66,7 @@ stretch_mode = 6
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
+margin_right = -30.0
 theme = ExtResource( 1 )
 text = "WefChat 3.4 (C) 2019-2034 - https://wefchat.org"
 valign = 1
@@ -214,6 +217,8 @@ text = "[?]"
 [node name="Behavior" type="Node" parent="."]
 script = ExtResource( 5 )
 chatUiPath = NodePath("../ChatUi")
+startChatResource = ExtResource( 10 )
+responseChatResource = ExtResource( 11 )
 
 [node name="EngineTime" type="Node" parent="."]
 process_priority = -1

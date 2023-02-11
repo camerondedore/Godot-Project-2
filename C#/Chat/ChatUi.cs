@@ -189,33 +189,4 @@ public class ChatUi : Node
 			i++;
 		}
 	}
-
-
-
-	public class ChatLine
-	{
-		public float time;
-		public string action,
-			user,
-			color, 
-			message;
-		
-
-		
-		public ChatLine(string rawMessage)
-		{
-			// split raw message and assign fields
-			string[] splitMessage = rawMessage.Split(';');
-			
-			time = float.Parse(splitMessage[0]);
-			action = splitMessage[1];
-			user = splitMessage[2];
-			color = splitMessage[3];
-
-			if(splitMessage.Length >= 5)
-			{
-				message = splitMessage[4];
-			}
-		}
-	}
 }

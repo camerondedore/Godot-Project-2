@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://C#/Chat/ChatLinesResource.cs" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+ChatLines = PoolStringArray( "-1;gibberish;colfax;#9911ff;speak english, retard.", "0;target;colfax;#9911ff;some jerk that hates the MIC.", "0;location;colfax;#9911ff;he lives in a dumpy appartment in sprooklyn." )
