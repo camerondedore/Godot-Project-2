@@ -16,7 +16,7 @@
 [ext_resource path="res://Materials/TmpPlaceholderProp.tres" type="Material" id=14]
 [ext_resource path="res://Models/level-1-depository_level-1-depository.mesh" type="ArrayMesh" id=15]
 [ext_resource path="res://Materials/TmpWindowGlow.tres" type="Material" id=16]
-[ext_resource path="res://Materials/pt-wall.tres" type="Material" id=17]
+[ext_resource path="res://Materials/Brick.tres" type="Material" id=17]
 [ext_resource path="res://Materials/pt-fence.tres" type="Material" id=18]
 [ext_resource path="res://Materials/pt-wood.tres" type="Material" id=19]
 [ext_resource path="res://Materials/pt-default.tres" type="Material" id=20]
@@ -285,6 +285,9 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.94681
 
 [node name="PropBoxWall5" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.54654, 4.25, 8.11829 )
+
+[node name="PropBoxWall6" parent="Map/Props" instance=ExtResource( 7 )]
+transform = Transform( 1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 6.41654, 4.25, 7.74829 )
 
 [node name="PropBoxWall4" parent="Map/Props" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 8.09262, 0.75, -3.2602 )
