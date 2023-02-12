@@ -25,7 +25,7 @@ public class ChatStateStart : ChatState
             if(chatLine.action == "logon")
             {
                 // logon
-                blackboard.chatUi.LogOnUser(chatLine.user, chatLine.color);
+                blackboard.chatUi.LogonUser(chatLine.user, chatLine.color);
             }
             else if(chatLine.action == "message")
             {
@@ -35,7 +35,7 @@ public class ChatStateStart : ChatState
             else if(chatLine.action == "logoff")
             {
                 // logoff
-                blackboard.chatUi.LogOffUser(chatLine.user, chatLine.color);
+                blackboard.chatUi.LogoffUser(chatLine.user, chatLine.color);
             }
             
 

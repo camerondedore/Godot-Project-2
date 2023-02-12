@@ -20,7 +20,9 @@ public class ChatUi : Node
 		sendButtonPath,
 		chatAudioPath;
 	[Export]
-	AudioStream chatNotificationSound;
+	AudioStream chatNotificationSound,
+		chatLogonSound,
+		chatLogoffSound;
 
 	public string newUserMessage = "";
 	RichTextLabel chatHistory;
@@ -127,24 +129,30 @@ public class ChatUi : Node
 
 
 
-	public void LogOnUser(string user, string color)
+	public void LogonUser(string user, string color)
 	{
 		// HH:MM:SS         --> | <message 100 char>
 
 		var newMessage = $"\n{GetTime()}         [color=green]-->[/color] | [color={color}]{user}[/color] [color=green]has joined[/color] {chatRoomName}";
 
 		chatHistory.AppendBbcode(newMessage);
+
+		// logons are assumed never to be the user
+		chatAudio.PlaySound(this, chatLogonSound);		
 	}
 
 
 
-	public void LogOffUser(string user, string color)
+	public void LogoffUser(string user, string color)
 	{
 		// HH:MM:SS         <-- | <message 100 char>
 
 		var newMessage = $"\n{GetTime()}         [color=red]<--[/color] | [color={color}]{user}[/color] [color=red]has left[/color] (Client quit)";
 
 		chatHistory.AppendBbcode(newMessage);
+	
+		// logoffs are assumed never to be the user
+		chatAudio.PlaySound(this, chatLogoffSound);	
 	}
 
 

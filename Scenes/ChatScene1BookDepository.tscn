@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/chat-theme.tres" type="Theme" id=1]
 [ext_resource path="res://UI/ui-quit-button.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Fonts/courier-prime-title.tres" type="DynamicFont" id=9]
 [ext_resource path="res://ChatFiles/ChatLevel1Start.tres" type="Resource" id=10]
 [ext_resource path="res://ChatFiles/ChatLevel1Responses.tres" type="Resource" id=11]
+[ext_resource path="res://Audio/chat-logon.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/chat-logoff.wav" type="AudioStream" id=13]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.352941, 0.352941, 0.352941, 1 )
@@ -37,6 +39,8 @@ leaveButtonPath = NodePath("Container/LeaveButton")
 sendButtonPath = NodePath("Container/SendButton")
 chatAudioPath = NodePath("../AudioStreamPlayer")
 chatNotificationSound = ExtResource( 8 )
+chatLogonSound = ExtResource( 12 )
+chatLogoffSound = ExtResource( 13 )
 
 [node name="BackgroundRect" type="ColorRect" parent="ChatUi"]
 anchor_right = 1.0
