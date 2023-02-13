@@ -33,6 +33,7 @@ acceleration = 10.0
 jumpHeight = 1.0
 landTime = 0.05
 jumpStartTime = 0.05
+stepDistance = 1.0
 cameraControllerPath = NodePath("CameraController")
 feetAudioPath = NodePath("FeetAudio")
 footstepSounds = [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 15 ) ]
