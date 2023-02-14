@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Models/prop-toilet-parts_prop-toilet-water-pipe.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://Materials/pt-default.tres" type="Material" id=2]
+[ext_resource path="res://Materials/MetalBare.tres" type="Material" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.0801142
