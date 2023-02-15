@@ -12,6 +12,9 @@ mesh = ExtResource( 3 )
 material/0 = ExtResource( 1 )
 
 [node name="Camera" type="Spatial" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="MeshCamera" type="MeshInstance" parent="Camera"]
 generate_lightmap = false
