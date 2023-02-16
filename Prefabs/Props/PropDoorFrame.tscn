@@ -28,12 +28,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape" type="CollisionShape" parent="Door"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0 )
-shape = SubResource( 2 )
-
 [node name="Mesh" type="MeshInstance" parent="Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0.025 )
 mesh = ExtResource( 2 )
 skeleton = NodePath("../..")
 material/0 = ExtResource( 3 )
 material/1 = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Door"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0, 0 )
+shape = SubResource( 2 )
