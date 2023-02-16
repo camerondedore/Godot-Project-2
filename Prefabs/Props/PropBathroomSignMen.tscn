@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Models/prop-bathroom-sign_prop-bathroom-sign-men.mesh" type="ArrayMesh" id=1]
+[ext_resource path="res://Materials/PropBathroomSign.tres" type="Material" id=2]
+
+[node name="PropBathroomSignMen" type="Spatial"]
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )

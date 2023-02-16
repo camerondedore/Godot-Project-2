@@ -11,7 +11,6 @@ ssao_enabled = true
 ssao_intensity = 0.6
 ssao_radius2 = 0.2
 ssao_intensity2 = 0.8
-ssao_edge_sharpness = 25.0
 dof_blur_far_distance = 5.0
 dof_blur_far_transition = 0.21
 glow_enabled = true
