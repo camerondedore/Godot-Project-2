@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Models/prop-toilet-parts_prop-toilet-floor-hole.mesh" type="ArrayMesh" id=1]
-[ext_resource path="res://Materials/pt-default.tres" type="Material" id=2]
+[ext_resource path="res://Materials/MetalBare.tres" type="Material" id=2]
+[ext_resource path="res://Materials/Hole.tres" type="Material" id=3]
 
 [node name="PropToiletFloorHole" type="Spatial"]
 
@@ -9,3 +10,4 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
+material/1 = ExtResource( 3 )
