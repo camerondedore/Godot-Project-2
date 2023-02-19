@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Materials/PropScrewDriver.tres" type="Material" id=1]
+[ext_resource path="res://Models/prop-screwdriver_prop-screwdriver.mesh" type="ArrayMesh" id=2]
+
+[node name="PropScrewDriver" type="Spatial"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
