@@ -5,6 +5,9 @@
 [ext_resource path="res://Models/prop-mirror_prop-mirror.mesh" type="ArrayMesh" id=3]
 
 [node name="PropMirror" type="Spatial"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = ExtResource( 3 )

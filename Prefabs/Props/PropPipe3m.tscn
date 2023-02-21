@@ -8,6 +8,9 @@ radius = 0.1
 height = 3.0
 
 [node name="PropPipe3m" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Mesh" type="MeshInstance" parent="."]
 generate_lightmap = false

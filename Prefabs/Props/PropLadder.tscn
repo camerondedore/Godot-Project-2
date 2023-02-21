@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Materials/MetalBare.tres" type="Material" id=1]
+[ext_resource path="res://Materials/pt-wood.tres" type="Material" id=2]
+[ext_resource path="res://Models/prop-ladder_prop-ladder.mesh" type="ArrayMesh" id=3]
+
+[sub_resource type="ConvexPolygonShape" id=1]
+points = PoolVector3Array( -0.231863, 0.377813, -0.420055, 0.269511, -0.691023, 0.530341, -0.275, -0.74446, -0.39509, 0.2928, 0.757911, -0.114897, 0.275, -0.733197, -0.388265, -0.256691, 0.78, 0.0482319, 0.224047, 0.4569, -0.414447, 0.217252, 0.780407, 0.0666716, -0.289511, 0.760109, -0.1154, -0.275, -0.744619, 0.547057, -0.231863, -0.529724, 0.506421, 0.275, -0.733197, 0.539858, 0.226634, -0.529724, 0.506421, -0.231863, 0.471394, 0.178824, -0.278716, -0.75468, -0.345159, 0.275, 0.678558, 0.0666716, 0.2842, -0.551254, 0.439822, -0.283263, -0.557621, 0.443999, 0.226634, 0.377813, -0.420055, -0.225, 0.448979, -0.405773, 0.226634, 0.471394, 0.178824, 0.2842, -0.359987, -0.306479, 0.260786, 0.78, -0.0903483, -0.265903, 0.699985, 0.0666716, -0.256691, 0.78, -0.0903483, 0.260786, 0.78, 0.0482319, -0.282182, -0.362765, -0.309225, 0.211526, 0.760109, -0.1154, 0.274333, -0.685765, -0.387153 )
+
+[node name="PropLadder" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )

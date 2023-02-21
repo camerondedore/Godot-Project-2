@@ -8,6 +8,9 @@ radius = 0.05
 height = 2.0
 
 [node name="PropPipeSprinklers2m" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Mesh" type="MeshInstance" parent="."]
 generate_lightmap = false

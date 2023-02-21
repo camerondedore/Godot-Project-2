@@ -8,6 +8,9 @@
 extents = Vector3( 0.25, 0.1, 0.25 )
 
 [node name="PropSink" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Mesh" type="MeshInstance" parent="."]
 mesh = ExtResource( 3 )
