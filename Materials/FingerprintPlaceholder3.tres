@@ -5,5 +5,4 @@
 [resource]
 flags_transparent = true
 flags_unshaded = true
-albedo_color = Color( 1, 1, 1, 0.501961 )
 albedo_texture = ExtResource( 1 )

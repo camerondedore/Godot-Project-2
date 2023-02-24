@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Models/prop-rifle-casing_prop-rifle-casing.mesh" type="ArrayMesh" id=2]
+
+[node name="PropRifleCasing" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = null
