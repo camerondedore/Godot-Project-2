@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-ChatLines = PoolStringArray( "1;logon;colfax;#9911ff;", "2;message;colfax;#9911ff;what\'s up, nerd\?", "2.25;message;colfax;#9911ff;imma gunna gucci lit fam, bro.", "3.5;message;colfax;#9911ff;i don\'t understand why people are so stupid", "5.5;message;colfax;#9911ff;heading out, piece losers", "6;logoff;colfax;#9911ff;" )
+ChatLines = PoolStringArray( "1.5;logon;colfax;#9911ff;", "3;message;colfax;#9911ff;Ruby, I have an assignement we need done.", "4.5;message;colfax;#9911ff;Catch the next flight to Texas.", "6;message;colfax;#9911ff;Our man will meet you in the V.I.P. lounge.", "7;message;colfax;#9911ff;Any questions\?" )
