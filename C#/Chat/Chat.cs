@@ -78,9 +78,10 @@ public class Chat : Node
 			actions: logon, message, logoff
 
 			CHAT RESPONSES
-			Format: <placeholder float>:<keyword string>:<user string>:<color string hexadecimal>:<message string>
+			Format: <keyword display float>:<keyword string>:<user string>:<color string hexadecimal>:<message string>
 			Example: "0;target;user1;#9911ff;the target is a dissident"
 			"gibberish" is the only keyword reserved by the chat behavior to respond to messages with no keyword
+			the keyword display float will determine if the keyword is displayed in the UI, values greater than -1 will appear in UI
 		*/
 		
 		public float time;

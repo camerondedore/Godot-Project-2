@@ -22,7 +22,7 @@ public class ChatStateRespond : ChatState
             blackboard.chatUi.newUserMessage = "";
 
             // check for new message words in chat lines
-            var chatLineMatch = blackboard.chatResponseLines.Where(c => newMessageWords.Contains(c.action) && c.time > -1).FirstOrDefault();
+            var chatLineMatch = blackboard.chatResponseLines.Where(c => newMessageWords.Contains(c.action) && c.action != "gibberish").FirstOrDefault();
 
             if(chatLineMatch != null)
             {

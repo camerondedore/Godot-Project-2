@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-ChatLines = PoolStringArray( "-1;gibberish;colfax;#9911ff;speak english, retard.", "0;location;colfax;#9911ff;You\'ll start on the fifth floor of the Book Depository.  Aside from the security tapes, your tasks are on the sixth floor.", "0;tasks;colfax;#9911ff;You need to place fingerprints, rifle casings, security tapes, and a remote-controlled rifle." )
+ChatLines = PoolStringArray( "-1;gibberish;colfax;#9911ff;speak english, retard.", "0;location;colfax;#9911ff;You\'ll start on the fifth floor of the Book Depository.  Aside from the security tapes, your tasks are on the sixth floor.", "0;tasks;colfax;#9911ff;You need to place fingerprints, rifle casings, security tapes, and a remote-controlled rifle.", "-1;yes;colfax;#9911ff;Yes, what\?" )
