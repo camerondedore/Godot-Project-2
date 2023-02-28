@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tmp-building.glb-30cbd74020b941c01e72d209660f2052.scn"
+path="res://.import/prop-wood-pallet.glb-bfab287aa7ba4ec69df497e3e5925ed5.scn"
 
 [deps]
 
-source_file="res://Models/tmp-building.glb"
-dest_files=[ "res://.import/tmp-building.glb-30cbd74020b941c01e72d209660f2052.scn" ]
+source_file="res://Models/prop-wood-pallet.glb"
+dest_files=[ "res://.import/prop-wood-pallet.glb-bfab287aa7ba4ec69df497e3e5925ed5.scn" ]
 
 [params]
 
@@ -24,7 +24,7 @@ meshes/octahedral_compression=true
 meshes/compress=4286
 meshes/ensure_tangents=true
 meshes/storage=1
-meshes/light_baking=2
+meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
