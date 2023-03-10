@@ -1,0 +1,8 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Textures/prop-vcr-diffuse.png" type="Texture" id=2]
+
+[resource]
+albedo_texture = ExtResource( 2 )
+metallic = 0.1
+roughness = 0.9
