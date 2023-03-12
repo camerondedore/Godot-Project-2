@@ -1,0 +1,11 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Textures/prop-vhs-tape-diffuse.png" type="Texture" id=1]
+[ext_resource path="res://Textures/prop-vhs-tape-metallic.png" type="Texture" id=2]
+[ext_resource path="res://Textures/prop-vhs-tape-roughness.png" type="Texture" id=3]
+
+[resource]
+albedo_texture = ExtResource( 1 )
+metallic = 0.1
+metallic_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 3 )
