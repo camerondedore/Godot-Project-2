@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/place-rifle-casings.wav-5363c4e1a27c876fa575a45fee258608.sample"
+
+[deps]
+
+source_file="res://Audio/place-rifle-casings.wav"
+dest_files=[ "res://.import/place-rifle-casings.wav-5363c4e1a27c876fa575a45fee258608.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
